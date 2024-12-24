@@ -1,0 +1,25 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity mini_mips is
+    Port (
+        clk: in std_logic;
+        write_enable: in std_logic;
+        data_in: in std_logic_vector(15 downto 0);
+        address: in std_logic_vector(3 downto 0);
+        data_out: out std_logic_vector(15 downto 0)
+    );
+end mini_mips;
+
+architecture Beh of mini_mips is
+begin
+    Memory_inst: Memory
+        Port map (
+            clk => clk,
+            write_enable => write_enable,
+            data_in => data_in,
+            address => address,
+            data_out => mem_out
+        );
+    data_out <= mem_out;
+end Beh;
