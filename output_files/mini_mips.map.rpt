@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mini_mips
-Mon Dec 23 20:44:13 2024
+Tue Dec 24 22:16:48 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -10,7 +10,33 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |mini_mips
+ 10. Parameter Settings for User Entity Instance: Bus_Mux:Bus_Mux_inst
+ 11. Parameter Settings for User Entity Instance: Memory:Memory_inst
+ 12. Parameter Settings for User Entity Instance: Generic_Reg:AR_inst
+ 13. Parameter Settings for User Entity Instance: Generic_Reg:IR_inst
+ 14. Parameter Settings for User Entity Instance: Generic_Reg:PC_inst
+ 15. Parameter Settings for User Entity Instance: Generic_Reg:DR1_inst
+ 16. Parameter Settings for User Entity Instance: Generic_Reg:DR2_inst
+ 17. Parameter Settings for User Entity Instance: registers:registers_inst
+ 18. Parameter Settings for User Entity Instance: Generic_Reg:R1_Addr_inst
+ 19. Parameter Settings for User Entity Instance: Generic_Reg:R2_Addr_inst
+ 20. Port Connectivity Checks: "Generic_Reg:R2_Addr_inst"
+ 21. Port Connectivity Checks: "Generic_Reg:R1_Addr_inst"
+ 22. Port Connectivity Checks: "registers:registers_inst"
+ 23. Port Connectivity Checks: "Generic_Reg:DR2_inst"
+ 24. Port Connectivity Checks: "Generic_Reg:DR1_inst"
+ 25. Port Connectivity Checks: "Generic_Reg:PC_inst"
+ 26. Port Connectivity Checks: "Generic_Reg:IR_inst"
+ 27. Port Connectivity Checks: "Generic_Reg:AR_inst"
+ 28. Port Connectivity Checks: "Memory:Memory_inst"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
 
 
 
@@ -37,22 +63,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Dec 23 20:44:13 2024              ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 24 22:16:48 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; mini_mips                                      ;
 ; Top-level Entity Name              ; mini_mips                                      ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
-; UFM blocks                         ; N/A until Partition Merge                      ;
-; ADC blocks                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 0                                              ;
+;     Total combinational functions  ; 0                                              ;
+;     Dedicated logic registers      ; 0                                              ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 65                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -158,57 +184,756 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; Generic_Reg.vhd                  ; yes             ; User VHDL File  ; C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Generic_Reg.vhd ;         ;
+; Memory.vhd                       ; yes             ; User VHDL File  ; C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Memory.vhd      ;         ;
+; mini_mips.vhd                    ; yes             ; User VHDL File  ; C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd   ;         ;
+; registers.vhd                    ; yes             ; User VHDL File  ; C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd   ;         ;
+; Utility_Pkg.vhd                  ; yes             ; User VHDL File  ; C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Utility_Pkg.vhd ;         ;
+; bus_mux.vhd                      ; yes             ; User VHDL File  ; C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/bus_mux.vhd     ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 65    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 65    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |mini_mips                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 65   ; 0            ; 0          ; |mini_mips          ; mini_mips   ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |mini_mips ;
++-------------------+-----------------+-------------------------------------+
+; Parameter Name    ; Value           ; Type                                ;
++-------------------+-----------------+-------------------------------------+
+; MEMO_INIT_FILE    ; init_memory.mif ; String                              ;
+; SEQ_COUNTER_MAX   ; 7               ; Signed Integer                      ;
+; FUNC_ADDR_WIDTH   ; 5               ; Signed Integer                      ;
+; BUS_SEL_MUX       ; 5               ; Signed Integer                      ;
+; OPCODE_ADDR_WIDTH ; 5               ; Signed Integer                      ;
+; DATA_WIDTH        ; 32              ; Signed Integer                      ;
+; ADDR_WIDTH        ; 5               ; Signed Integer                      ;
+; START_EXECUTE     ; 7               ; Signed Integer                      ;
++-------------------+-----------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Bus_Mux:Bus_Mux_inst ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; bus_sel_mux    ; 5     ; Signed Integer                           ;
+; data_width     ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory:Memory_inst ;
++----------------+-----------------+------------------------------+
+; Parameter Name ; Value           ; Type                         ;
++----------------+-----------------+------------------------------+
+; data_width     ; 32              ; Signed Integer               ;
+; addr_width     ; 5               ; Signed Integer               ;
+; init_file      ; init_memory.mif ; String                       ;
++----------------+-----------------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Generic_Reg:AR_inst ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; data_width     ; 5     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Generic_Reg:IR_inst ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; data_width     ; 32    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Generic_Reg:PC_inst ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; data_width     ; 32    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Generic_Reg:DR1_inst ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; data_width     ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Generic_Reg:DR2_inst ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; data_width     ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registers:registers_inst ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; addr_width     ; 5     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Generic_Reg:R1_Addr_inst ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; data_width     ; 5     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Generic_Reg:R2_Addr_inst ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; data_width     ; 5     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "Generic_Reg:R2_Addr_inst" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; clr  ; Input ; Info     ; Stuck at GND               ;
+; inc  ; Input ; Info     ; Stuck at GND               ;
+; en   ; Input ; Info     ; Stuck at VCC               ;
++------+-------+----------+----------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "Generic_Reg:R1_Addr_inst" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; clr  ; Input ; Info     ; Stuck at GND               ;
+; inc  ; Input ; Info     ; Stuck at GND               ;
+; en   ; Input ; Info     ; Stuck at VCC               ;
++------+-------+----------+----------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "registers:registers_inst" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; clr  ; Input ; Info     ; Stuck at GND               ;
+; ld1  ; Input ; Info     ; Stuck at GND               ;
++------+-------+----------+----------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "Generic_Reg:DR2_inst" ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; clr  ; Input ; Info     ; Stuck at GND           ;
+; inc  ; Input ; Info     ; Stuck at GND           ;
++------+-------+----------+------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "Generic_Reg:DR1_inst" ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; clr  ; Input ; Info     ; Stuck at GND           ;
+; inc  ; Input ; Info     ; Stuck at GND           ;
++------+-------+----------+------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "Generic_Reg:PC_inst" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; clr  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "Generic_Reg:IR_inst" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; clr  ; Input ; Info     ; Stuck at GND          ;
+; inc  ; Input ; Info     ; Stuck at GND          ;
+; en   ; Input ; Info     ; Stuck at VCC          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "Generic_Reg:AR_inst" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; clr  ; Input ; Info     ; Stuck at GND          ;
+; inc  ; Input ; Info     ; Stuck at GND          ;
+; en   ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "Memory:Memory_inst" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; write_enable ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 65                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Dec 23 20:44:02 2024
+    Info: Processing started: Tue Dec 24 22:16:38 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mini_mips -c mini_mips
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file generic_reg.vhd
-    Info (12022): Found design unit 1: Generic_Reg-Beh File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Generic_Reg.vhd Line: 19
+    Info (12022): Found design unit 1: Generic_Reg-Beh File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Generic_Reg.vhd Line: 21
     Info (12023): Found entity 1: Generic_Reg File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Generic_Reg.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
-    Info (12022): Found design unit 1: Memory-Beh File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Memory.vhd Line: 22
+    Info (12022): Found design unit 1: Memory-Beh File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Memory.vhd Line: 21
     Info (12023): Found entity 1: Memory File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Memory.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file mini_mips.vhd
-    Info (12022): Found design unit 1: mini_mips-Beh File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 32
+    Info (12022): Found design unit 1: mini_mips-Beh File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 29
     Info (12023): Found entity 1: mini_mips File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file registers.vhd
-    Info (12022): Found design unit 1: registers-Beh File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 27
+    Info (12022): Found design unit 1: registers-Beh File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 24
     Info (12023): Found entity 1: registers File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 5
 Info (12021): Found 2 design units, including 0 entities, in source file utility_pkg.vhd
     Info (12022): Found design unit 1: Utility_Pkg File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Utility_Pkg.vhd Line: 4
     Info (12022): Found design unit 2: Utility_Pkg-body File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Utility_Pkg.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file bus_mux.vhd
+    Info (12022): Found design unit 1: Bus_Mux-Behavioral File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/bus_mux.vhd Line: 26
+    Info (12023): Found entity 1: Bus_Mux File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/bus_mux.vhd Line: 6
 Info (12127): Elaborating entity "mini_mips" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at mini_mips.vhd(37): used implicit default value for signal "reg2_data_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 37
-Warning (10036): Verilog HDL or VHDL warning at mini_mips.vhd(51): object "execute" assigned a value but never read File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 51
-Warning (10492): VHDL Process Statement warning at mini_mips.vhd(177): signal "sc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 177
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[15]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10029): Constant driver at mini_mips.vhd(140) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 140
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[14]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[13]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[12]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[11]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[10]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[9]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[8]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[7]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[6]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[5]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[4]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[3]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[2]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[1]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (10028): Can't resolve multiple constant drivers for net "bus_data[0]" at mini_mips.vhd(63) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 63
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 18 errors, 4 warnings
-    Error: Peak virtual memory: 4785 megabytes
-    Error: Processing ended: Mon Dec 23 20:44:13 2024
-    Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:10
+Warning (10541): VHDL Signal Declaration warning at mini_mips.vhd(25): used implicit default value for signal "output" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+Warning (10540): VHDL Signal Declaration warning at mini_mips.vhd(36): used explicit default value for signal "r1_start_idx" because signal was never assigned a value File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 36
+Warning (10036): Verilog HDL or VHDL warning at mini_mips.vhd(49): object "execute" assigned a value but never read File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 49
+Warning (10492): VHDL Process Statement warning at mini_mips.vhd(222): signal "sc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 222
+Info (12128): Elaborating entity "Bus_Mux" for hierarchy "Bus_Mux:Bus_Mux_inst" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at bus_mux.vhd(44): signal "memo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/bus_mux.vhd Line: 44
+Info (12128): Elaborating entity "Memory" for hierarchy "Memory:Memory_inst" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 90
+Info (12128): Elaborating entity "Generic_Reg" for hierarchy "Generic_Reg:AR_inst" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 104
+Info (12128): Elaborating entity "Generic_Reg" for hierarchy "Generic_Reg:IR_inst" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 118
+Info (12128): Elaborating entity "registers" for hierarchy "registers:registers_inst" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at registers.vhd(29): signal "clr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 29
+Warning (10492): VHDL Process Statement warning at registers.vhd(31): signal "ld1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at registers.vhd(32): signal "data_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at registers.vhd(32): signal "reg1_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at registers.vhd(35): signal "registers" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 35
+Warning (10492): VHDL Process Statement warning at registers.vhd(35): signal "reg1_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 35
+Warning (10492): VHDL Process Statement warning at registers.vhd(36): signal "registers" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 36
+Warning (10492): VHDL Process Statement warning at registers.vhd(36): signal "reg2_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 36
+Warning (10631): VHDL Process Statement warning at registers.vhd(28): inferring latch(es) for signal or variable "registers", which holds its previous value in one or more paths through the process File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][0]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][1]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][2]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][3]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][4]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][5]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][6]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][7]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][8]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][9]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][10]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][11]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][12]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][13]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][14]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][15]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][16]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][17]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][18]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][19]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][20]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][21]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][22]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][23]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][24]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][25]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][26]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][27]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][28]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][29]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][30]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[9][31]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][0]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][1]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][2]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][3]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][4]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][5]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][6]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][7]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][8]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][9]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][10]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][11]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][12]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][13]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][14]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][15]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][16]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][17]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][18]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][19]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][20]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][21]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][22]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][23]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][24]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][25]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][26]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][27]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][28]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][29]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][30]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[8][31]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][0]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][1]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][2]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][3]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][4]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][5]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][6]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][7]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][8]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][9]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][10]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][11]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][12]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][13]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][14]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][15]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][16]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][17]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][18]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][19]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][20]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][21]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][22]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][23]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][24]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][25]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][26]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][27]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][28]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][29]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][30]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[7][31]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][0]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][1]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][2]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][3]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][4]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][5]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][6]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][7]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][8]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][9]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][10]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][11]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][12]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][13]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][14]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][15]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][16]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][17]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][18]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][19]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][20]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][21]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][22]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][23]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][24]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][25]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][26]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][27]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][28]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][29]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][30]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[6][31]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][0]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][1]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][2]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][3]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][4]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][5]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][6]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][7]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][8]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][9]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][10]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][11]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][12]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][13]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][14]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][15]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][16]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][17]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][18]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][19]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][20]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][21]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][22]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][23]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][24]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][25]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][26]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][27]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][28]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][29]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][30]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[5][31]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][0]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][1]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][2]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][3]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][4]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][5]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][6]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][7]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][8]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][9]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][10]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][11]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][12]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][13]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][14]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][15]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][16]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][17]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][18]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][19]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][20]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][21]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][22]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][23]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][24]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][25]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][26]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][27]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][28]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][29]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][30]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[4][31]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][0]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][1]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][2]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][3]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][4]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][5]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][6]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][7]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][8]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][9]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][10]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][11]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][12]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][13]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][14]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][15]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][16]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][17]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][18]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][19]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][20]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][21]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][22]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][23]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][24]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][25]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][26]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][27]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][28]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][29]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][30]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[3][31]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][0]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][1]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][2]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][3]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][4]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][5]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][6]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][7]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][8]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][9]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][10]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][11]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][12]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][13]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][14]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][15]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][16]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][17]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][18]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][19]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][20]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][21]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][22]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][23]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][24]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][25]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][26]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][27]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][28]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][29]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][30]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[2][31]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][0]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][1]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][2]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][3]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][4]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][5]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][6]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][7]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][8]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][9]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][10]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][11]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][12]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][13]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][14]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][15]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][16]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][17]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][18]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][19]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][20]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][21]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][22]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][23]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][24]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][25]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][26]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][27]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][28]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][29]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][30]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[1][31]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][0]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][1]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][2]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][3]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][4]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][5]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][6]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][7]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][8]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][9]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][10]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][11]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][12]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][13]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][14]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][15]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][16]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][17]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][18]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][19]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][20]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][21]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][22]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][23]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][24]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][25]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][26]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][27]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][28]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][29]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][30]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Info (10041): Inferred latch for "registers[0][31]" at registers.vhd(28) File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/registers.vhd Line: 28
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "output[0]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[1]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[2]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[3]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[4]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[5]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[6]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[7]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[8]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[9]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[10]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[11]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[12]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[13]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[14]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[15]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[16]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[17]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[18]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[19]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[20]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[21]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[22]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[23]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[24]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[25]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[26]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[27]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[28]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[29]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[30]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+    Warning (13410): Pin "output[31]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 25
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 33 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
+    Warning (15610): No output dependent on input pin "input[0]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[1]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[2]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[3]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[4]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[5]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[6]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[7]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[8]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[9]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[10]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[11]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[12]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[13]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[14]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[15]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[16]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[17]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[18]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[19]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[20]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[21]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[22]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[23]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[24]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[25]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[26]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[27]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[28]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[29]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[30]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+    Warning (15610): No output dependent on input pin "input[31]" File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 24
+Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 33 input pins
+    Info (21059): Implemented 32 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 82 warnings
+    Info: Peak virtual memory: 4790 megabytes
+    Info: Processing ended: Tue Dec 24 22:16:48 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:10
 
 

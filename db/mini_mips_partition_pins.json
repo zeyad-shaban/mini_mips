@@ -2,20 +2,7 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : [
-				{
-					"name" : "data_out[0]",
-					"strict" : false
-				},
-				{
-					"name" : "data_out[2]",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
-					"strict" : false
-				}
-			]
+			"pins" : []
 		}
 	]
 }

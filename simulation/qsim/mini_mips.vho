@@ -221,8 +221,8 @@ END COMPONENT;
 BEGIN
 
 ww_clk <= clk;
-ww_data_in <= data_in;
-data_out <= ww_data_out;
+ww_data_in <= input;
+output <= ww_data_out;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
