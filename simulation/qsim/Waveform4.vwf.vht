@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "12/30/2024 21:06:29"
+-- Generated on "12/30/2024 23:12:55"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          mini_mips
 -- 
@@ -36,14 +36,15 @@ ARCHITECTURE mini_mips_arch OF mini_mips_vhd_vec_tst IS
 -- signals                                                   
 SIGNAL clk : STD_LOGIC;
 SIGNAL clr : STD_LOGIC;
-SIGNAL debug_ar : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL debug_bus_data_in : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL debug_bus_reg_rd : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL debug_bus_reg_rs : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL debug_bus_reg_rt : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL debug_func : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL debug_immediate : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL debug_ir : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL debug_mem_data_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL debug_opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
-SIGNAL debug_pc : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL debug_rd_addr : STD_LOGIC_VECTOR(4 DOWNTO 0);
+SIGNAL debug_reg_file_ld : STD_LOGIC;
 SIGNAL debug_rs_addr : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL debug_rt_addr : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL debug_shamt : STD_LOGIC_VECTOR(4 DOWNTO 0);
@@ -53,14 +54,15 @@ COMPONENT mini_mips
 	PORT (
 	clk : IN STD_LOGIC;
 	clr : IN STD_LOGIC;
-	debug_ar : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	debug_bus_data_in : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	debug_bus_reg_rd : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	debug_bus_reg_rs : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	debug_bus_reg_rt : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	debug_func : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	debug_immediate : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	debug_ir : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	debug_mem_data_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	debug_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
-	debug_pc : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
 	debug_rd_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+	debug_reg_file_ld : OUT STD_LOGIC;
 	debug_rs_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 	debug_rt_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 	debug_shamt : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
@@ -74,14 +76,15 @@ BEGIN
 -- list connections between master ports and signals
 	clk => clk,
 	clr => clr,
-	debug_ar => debug_ar,
+	debug_bus_data_in => debug_bus_data_in,
+	debug_bus_reg_rd => debug_bus_reg_rd,
+	debug_bus_reg_rs => debug_bus_reg_rs,
+	debug_bus_reg_rt => debug_bus_reg_rt,
 	debug_func => debug_func,
 	debug_immediate => debug_immediate,
-	debug_ir => debug_ir,
 	debug_mem_data_out => debug_mem_data_out,
-	debug_opcode => debug_opcode,
-	debug_pc => debug_pc,
 	debug_rd_addr => debug_rd_addr,
+	debug_reg_file_ld => debug_reg_file_ld,
 	debug_rs_addr => debug_rs_addr,
 	debug_rt_addr => debug_rt_addr,
 	debug_shamt => debug_shamt,
@@ -292,4 +295,11 @@ BEGIN
 	input(0) <= '0';
 WAIT;
 END PROCESS t_prcs_input_0;
+
+-- clr
+t_prcs_clr: PROCESS
+BEGIN
+	clr <= '0';
+WAIT;
+END PROCESS t_prcs_clr;
 END mini_mips_arch;

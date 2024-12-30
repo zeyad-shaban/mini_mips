@@ -21,6 +21,9 @@ after 2500 simTimestamp
 run -all
 quit -f
 
+
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -39,6 +42,9 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
+
 
 </modelsim_script_timing>
 <hdl_lang>vhdl</hdl_lang>
@@ -2558,6 +2564,1346 @@ SIGNAL("debug_ar[0]")
 	PARENT = "debug_ar";
 }
 
+SIGNAL("clr")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("debug_bus_data_in")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 32;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("debug_bus_data_in[31]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[30]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[29]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[28]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[27]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[26]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[25]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[24]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[23]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[22]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[21]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[20]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[19]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[18]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[17]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[16]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_data_in[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_data_in";
+}
+
+SIGNAL("debug_bus_reg_rt")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 32;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("debug_bus_reg_rt[31]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[30]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[29]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[28]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[27]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[26]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[25]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[24]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[23]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[22]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[21]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[20]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[19]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[18]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[17]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[16]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rt[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rt";
+}
+
+SIGNAL("debug_bus_reg_rs")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 32;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("debug_bus_reg_rs[31]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[30]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[29]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[28]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[27]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[26]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[25]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[24]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[23]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[22]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[21]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[20]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[19]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[18]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[17]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[16]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rs[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rs";
+}
+
+SIGNAL("debug_bus_reg_rd")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 32;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("debug_bus_reg_rd[31]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[30]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[29]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[28]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[27]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[26]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[25]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[24]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[23]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[22]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[21]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[20]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[19]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[18]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[17]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[16]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_bus_reg_rd[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "debug_bus_reg_rd";
+}
+
+SIGNAL("debug_reg_file_ld")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("clk")
 {
 	NODE
@@ -4675,6 +6021,1181 @@ TRANSITION_LIST("debug_ar[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("clr")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[31]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[30]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[29]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[28]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[27]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[26]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[25]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[24]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[23]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[22]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[21]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[20]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[19]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[18]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[17]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[16]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_data_in[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[31]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[30]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[29]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[28]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[27]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[26]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[25]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[24]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[23]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[22]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[21]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[20]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[19]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[18]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[17]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[16]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rt[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[31]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[30]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[29]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[28]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[27]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[26]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[25]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[24]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[23]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[22]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[21]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[20]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[19]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[18]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[17]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[16]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rs[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[31]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[30]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[29]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[28]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[27]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[26]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[25]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[24]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[23]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[22]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[21]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[20]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[19]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[18]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[17]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[16]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_bus_reg_rd[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("debug_reg_file_ld")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 10;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 50.0;
+		}
 	}
 }
 
@@ -7155,6 +9676,1344 @@ DISPLAY_LINE
 	TREE_INDEX = 247;
 	TREE_LEVEL = 1;
 	PARENT = 215;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 248;
+	TREE_LEVEL = 0;
+	CHILDREN = 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[31]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 249;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[30]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 250;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[29]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 251;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[28]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 252;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[27]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 253;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[26]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 254;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[25]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 255;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[24]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 256;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[23]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 257;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[22]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 258;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[21]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 259;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[20]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 260;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[19]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 261;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[18]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 262;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[17]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 263;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[16]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 264;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 265;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 266;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 267;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 268;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 269;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 270;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 271;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 272;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 273;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 274;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 275;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 276;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 277;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 278;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 279;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_data_in[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 280;
+	TREE_LEVEL = 1;
+	PARENT = 248;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "clr";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 281;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 282;
+	TREE_LEVEL = 0;
+	CHILDREN = 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[31]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 283;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[30]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 284;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[29]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 285;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[28]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 286;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[27]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 287;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[26]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 288;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[25]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 289;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[24]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 290;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[23]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 291;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[22]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 292;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[21]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 293;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[20]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 294;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[19]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 295;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[18]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 296;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[17]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 297;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[16]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 298;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 299;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 300;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 301;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 302;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 303;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 304;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 305;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 306;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 307;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 308;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 309;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 310;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 311;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 312;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 313;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rt[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 314;
+	TREE_LEVEL = 1;
+	PARENT = 282;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 315;
+	TREE_LEVEL = 0;
+	CHILDREN = 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[31]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 316;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[30]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 317;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[29]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 318;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[28]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 319;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[27]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 320;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[26]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 321;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[25]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 322;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[24]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 323;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[23]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 324;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[22]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 325;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[21]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 326;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[20]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 327;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[19]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 328;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[18]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 329;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[17]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 330;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[16]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 331;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 332;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 333;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 334;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 335;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 336;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 337;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 338;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 339;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 340;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 341;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 342;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 343;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 344;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 345;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 346;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rs[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 347;
+	TREE_LEVEL = 1;
+	PARENT = 315;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 348;
+	TREE_LEVEL = 0;
+	CHILDREN = 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[31]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 349;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[30]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 350;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[29]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 351;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[28]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 352;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[27]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 353;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[26]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 354;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[25]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 355;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[24]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 356;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[23]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 357;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[22]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 358;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[21]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 359;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[20]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 360;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[19]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 361;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[18]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 362;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[17]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 363;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[16]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 364;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 365;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 366;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 367;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 368;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 369;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 370;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 371;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 372;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 373;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 374;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 375;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 376;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 377;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 378;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 379;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_bus_reg_rd[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 380;
+	TREE_LEVEL = 1;
+	PARENT = 348;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "debug_reg_file_ld";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 381;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

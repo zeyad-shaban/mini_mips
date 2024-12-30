@@ -25,7 +25,12 @@ END registers;
 
 ARCHITECTURE Beh OF registers IS
     TYPE reg_array IS ARRAY (0 TO 2 * ADDR_WIDTH - 1) OF STD_LOGIC_VECTOR (2 ** ADDR_WIDTH - 1 DOWNTO 0);
-    SIGNAL registers : reg_array := (OTHERS => (OTHERS => '0'));
+    SIGNAL registers : reg_array := (
+        0 => (OTHERS => '0'),
+        1 => "00000000000000000000000000000001", -- Initialize register 1 with 1
+        2 => "00000000000000000000000000000110", -- Initialize register 2 with 6
+        OTHERS => (OTHERS => '0')
+    );
 BEGIN
     PROCESS (clk) BEGIN
         IF (rising_edge(clk)) THEN
