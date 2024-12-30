@@ -1,25 +1,94 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+USE work.Utility_Pkg.ALL;
 
-entity mini_mips is
-    Port (
-        clk: in std_logic;
-        write_enable: in std_logic;
-        data_in: in std_logic_vector(15 downto 0);
-        address: in std_logic_vector(3 downto 0);
-        data_out: out std_logic_vector(15 downto 0)
-    );
-end mini_mips;
+ENTITY mini_mips IS
+	PORT (
+		clk : IN STD_LOGIC;
+		clr : IN STD_LOGIC;
+		some_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	);
+END mini_mips;
 
-architecture Beh of mini_mips is
-begin
-    Memory_inst: Memory
-        Port map (
-            clk => clk,
-            write_enable => write_enable,
-            data_in => data_in,
-            address => address,
-            data_out => mem_out
-        );
-    data_out <= mem_out;
-end Beh;
+ARCHITECTURE Beh OF mini_mips IS
+	-- SIGNAL pc : STD_LOGIC_VECTOR(9 DOWNTO 0) := (OTHERS => '0'); -- 10-bit address width
+	SIGNAL ir : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	-- SIGNAL opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	-- SIGNAL rt_addr, rs_addr, rd_addr : STD_LOGIC_VECTOR(4 DOWNTO 0);
+	-- SIGNAL shamt : STD_LOGIC_VECTOR(4 DOWNTO 0);
+	-- SIGNAL func : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	-- SIGNAL immediate : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	-- SIGNAL mem_data_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	-- SIGNAL reg1_data_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	-- SIGNAL reg2_data_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
+
+BEGIN
+	ir <= "11111111111111111111111111111111";
+	some_out <= ir;
+	-- PROCESS (clk)
+	-- BEGIN
+	-- 	IF rising_edge(clk) THEN
+	-- 		IF clr = '1' THEN
+	-- 			pc <= (OTHERS => '0');
+	-- 			ir <= (OTHERS => '0');
+	-- 			opcode <= (OTHERS => '0');
+	-- 			rt_addr <= (OTHERS => '0');
+	-- 			rs_addr <= (OTHERS => '0');
+	-- 			rd_addr <= (OTHERS => '0');
+	-- 			shamt <= (OTHERS => '0');
+	-- 			func <= (OTHERS => '0');
+	-- 			immediate <= (OTHERS => '0');
+	-- 		ELSE
+	-- 			-- Fetch stage
+	-- 			ir <= mem_data_out;
+	-- 			pc <= STD_LOGIC_VECTOR(unsigned(pc) + 1);
+	-- 			opcode <= ir(31 DOWNTO 26);
+
+	-- 			-- Decode stage
+	-- 			IF opcode = "000000" THEN -- Reg type
+	-- 				rt_addr <= ir(20 DOWNTO 16);
+	-- 				rs_addr <= ir(25 DOWNTO 21);
+	-- 				rd_addr <= ir(15 DOWNTO 11);
+	-- 				shamt <= ir(10 DOWNTO 6);
+	-- 				func <= ir(5 DOWNTO 0);
+	-- 			ELSE -- Immediate type
+	-- 				rt_addr <= ir(20 DOWNTO 16);
+	-- 				rs_addr <= ir(25 DOWNTO 21);
+	-- 				immediate <= ir(15 DOWNTO 0);
+	-- 			END IF;
+	-- 		END IF;
+	-- 	END IF;
+	-- END PROCESS;
+
+	-- Memory instantiation
+	-- Memory_inst : ENTITY work.Memory
+	-- 	GENERIC MAP(
+	-- 		DATA_WIDTH => 32,
+	-- 		ADDR_WIDTH => 10,
+	-- 		INIT_FILE => "init_memory.mif"
+	-- 	)
+	-- 	PORT MAP(
+	-- 		clk => clk,
+	-- 		write_enable => '0',
+	-- 		address => pc,
+	-- 		data_in => (OTHERS => '0'),
+	-- 		data_out => mem_data_out
+	-- 	);
+
+	-- -- Register file instantiation
+	-- RegFile_inst : ENTITY work.registers
+	-- 	GENERIC MAP(
+	-- 		ADDR_WIDTH => 5
+	-- 	)
+	-- 	PORT MAP(
+	-- 		clk => clk,
+	-- 		clr => clr,
+	-- 		ld1 => '1',
+	-- 		data_in => ir,
+	-- 		reg1_addr => rs_addr,
+	-- 		reg2_addr => rt_addr,
+	-- 		data_out1 => reg1_data_out,
+	-- 		data_out2 => reg2_data_out
+	-- 	);
+END ARCHITECTURE Beh;

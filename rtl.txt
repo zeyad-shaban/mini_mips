@@ -1,0 +1,74 @@
+# Fetch and Decode Phase
+t0: ir <- m[pc]
+t1: opcode <- ir[31-26]
+
+// Reg type
+~opcode and t2:
+            rt_addr <- ir[20-16],
+            rs_addr <- ir[25-21],
+            rd_addr <- ir[15-11],
+            shamt <- ir[10-6],
+            func <- ir[5-0],
+
+// Immediate type
+opcode and t2: 
+                rt_addr <- ir[20-16],
+                rs_addr <- ir[25-21],
+                immediate <- sign_extend(ir[15-0])
+
+// J type
+opcode and t2:
+                address <- ir[25-0]
+
+# Execute Phase
+t3 and op=1:
+    if opcode == "000000" then # R-type
+        elsif func == "000010" then -- INP
+            rt <- input
+        elsif func == "000011" then -- OUT
+            output <- rs
+        elsif func == "000100" then -- XOR
+            rd <- rs xor rt
+        elsif func == "000101" then -- XORi
+            rt <- rs xor immediate
+        elsif func == "000110" then -- Add
+            rd <- rs + rt
+        elsif func == "001000" then -- Sub
+            rd <- rs - rt
+        else
+            null
+        end if
+
+    # J type
+    elsif opcode == "111111" then # Jump
+        pc <- extend(address)
+    else # I-type
+        if opcode == "000001" then -- LDA $R5, (10)
+            AR <- 10
+            rt <- m[AR]
+        if opcode == "000010" then -- INP
+            rt <- input
+        elsif opcode == "000011" then -- OUT
+            output <- rs
+        elsif opcode == "000100" then -- XORi
+            rt <- rs xor immediate
+        elsif opcode == "000110" then -- Addi
+            rt <- rs + immediate
+        elsif opcode == "001000" then -- Subi
+            rt <- rs - immediate
+        else
+            null
+        end if
+    end if
+
+# Register design:
+    IR:
+        ld: t0
+        clr: 0
+
+    AR:
+        ld: t3 and (opcode = "000001")
+        clr: 0
+
+# Bus mux design:
+    nothing is giving to the bus yet

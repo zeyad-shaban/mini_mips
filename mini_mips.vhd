@@ -1,316 +1,343 @@
-LIBRARY IEEE;
-USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.NUMERIC_STD.ALL;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
 USE work.Utility_Pkg.ALL;
 
 ENTITY mini_mips IS
-	GENERIC (
-		-- memory
-		MEMO_INIT_FILE : STRING := "init_memory.mif";
-
-		SEQ_COUNTER_MAX : INTEGER := 7;
-		FUNC_ADDR_WIDTH : INTEGER := 5;
-		BUS_SEL_MUX : INTEGER := 5;
-
-		OPCODE_ADDR_WIDTH : INTEGER := 5;
-		DATA_WIDTH : INTEGER := 32;
-		ADDR_WIDTH : INTEGER := 5;
-		START_EXECUTE : INTEGER := 7
-
-	);
-
 	PORT (
 		clk : IN STD_LOGIC;
-		input : IN STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-		output : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0)
+		clr : IN STD_LOGIC;
+		input : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		output : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+
+		-- for debugging purpose
+		debug_pc : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+		debug_ir : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		debug_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		debug_rt_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		debug_rs_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		debug_rd_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		debug_shamt : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		debug_func : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		debug_immediate : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		debug_mem_data_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		debug_ar : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+		-- end for debugging
 	);
 END mini_mips;
 
+ARCHITECTURE Beh OF mini_mips LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+USE work.Utility_Pkg.ALL;
+
+ENTITY mini_mips IS
+    PORT (
+        clk : IN STD_LOGIC;
+        clr : IN STD_LOGIC;
+        input : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+        output : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+
+        -- for debugging purpose
+        debug_pc : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+        debug_ir : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        debug_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+        debug_rt_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+        debug_rs_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+        debug_rd_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+        debug_shamt : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+        debug_func : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+        debug_immediate : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        debug_mem_data_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        debug_ar : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    );
+END mini_mips;
+
 ARCHITECTURE Beh OF mini_mips IS
-	-- Data Registers
-	SIGNAL reg1_data_out : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-	SIGNAL reg2_data_out : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-	SIGNAL reg1_addr : STD_LOGIC_VECTOR(ADDR_WIDTH - 1 DOWNTO 0);
-	SIGNAL reg2_addr : STD_LOGIC_VECTOR(ADDR_WIDTH - 1 DOWNTO 0);
+    SIGNAL pc : STD_LOGIC_VECTOR(31 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL ir : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
+    SIGNAL rt_addr, rs_addr, rd_addr : STD_LOGIC_VECTOR(4 DOWNTO 0);
+    SIGNAL shamt : STD_LOGIC_VECTOR(4 DOWNTO 0);
+    SIGNAL func : STD_LOGIC_VECTOR(5 DOWNTO 0);
+    SIGNAL immediate : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL address : STD_LOGIC_VECTOR(25 DOWNTO 0);
+    SIGNAL mem_data_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL bus_reg_rs : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL bus_reg_rt : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL bus_reg_rd : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL bus_data_in : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL reg_file_ld : STD_LOGIC := '0';
+    SIGNAL AR : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL rt, rs, rd : STD_LOGIC_VECTOR(31 DOWNTO 0);
+BEGIN
+    debug_pc <= pc(9 DOWNTO 0);
+    debug_ir <= ir;
+    debug_opcode <= opcode;
+    debug_rt_addr <= rt_addr;
+    debug_rs_addr <= rs_addr;
+    debug_rd_addr <= rd_addr;
+    debug_shamt <= shamt;
+    debug_func <= func;
+    debug_immediate <= immediate;
+    debug_mem_data_out <= mem_data_out;
+    debug_ar <= AR;
 
-	SIGNAL r1_start_idx : INTEGER := DATA_WIDTH - OPCODE_ADDR_WIDTH - 2;
-	SIGNAL r2_start_idx : INTEGER := r1_start_idx - DATA_WIDTH - OPCODE_ADDR_WIDTH - 2;
+    PROCESS (clk)
+    BEGIN
+        IF rising_edge(clk) THEN
+            reg_file_ld <= '0';
 
-	-- Inner Registers
-	SIGNAL AR_out : STD_LOGIC_VECTOR(ADDR_WIDTH - 1 DOWNTO 0);
-	SIGNAL ir_out : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+            IF clr = '1' THEN
+                pc <= (OTHERS => '0');
+                ir <= (OTHERS => '0');
+                opcode <= (OTHERS => '0');
+                rt_addr <= (OTHERS => '0');
+                rs_addr <= (OTHERS => '0');
+                rd_addr <= (OTHERS => '0');
+                shamt <= (OTHERS => '0');
+                func <= (OTHERS => '0');
+                immediate <= (OTHERS => '0');
+                address <= (OTHERS => '0');
+                AR <= (OTHERS => '0');
+                rt <= (OTHERS => '0');
+                rs <= (OTHERS => '0');
+                rd <= (OTHERS => '0');
+            ELSE
+                AR <= pc;
+                pc <= STD_LOGIC_VECTOR(unsigned(pc) + 1);
+                ir <= mem_data_out;
+                opcode <= ir(31 DOWNTO 26);
 
-	SIGNAL memo_out : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-	SIGNAL pc_out : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-	SIGNAL dr1_out : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-	SIGNAL dr2_out : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
+                -- Decode stage
+                IF opcode = "000000" THEN -- R-type
+                    rs_addr <= ir(25 DOWNTO 21);
+                    rt_addr <= ir(20 DOWNTO 16);
+                    rd_addr <= ir(15 DOWNTO 11);
+                    shamt <= ir(10 DOWNTO 6);
+                    func <= ir(5 DOWNTO 0);
 
-	-- Flags
-	SIGNAL execute : STD_LOGIC;
-	SIGNAL immediate1 : STD_LOGIC;
-	SIGNAL immediate2 : STD_LOGIC;
+                ELSIF opcode = "001010" THEN -- J-type
+                    address <= ir(25 DOWNTO 0);
 
-	-- instruction related
-	SIGNAL sc : INTEGER RANGE 0 TO SEQ_COUNTER_MAX;
-	SIGNAL func : INTEGER RANGE 0 TO 2 ** FUNC_ADDR_WIDTH - 1;
+                ELSE -- I-type
+                    rs_addr <= ir(25 DOWNTO 21);
+                    rd_addr <= ir(20 DOWNTO 16);
+                    immediate <= Extend_Vector(ir(15 DOWNTO 0), 32);
+                END IF;
 
-	-- BUS
-	SIGNAL bus_data : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
-	SIGNAL bus_sel : INTEGER RANGE 0 TO BUS_SEL_MUX := 0;
+                -- Execute phase
+                rs <= bus_reg_rs;
+                rt <= bus_reg_rt;
+
+                IF opcode = "000000" THEN -- R-type
+                    IF func = "000100" THEN -- XOR
+                        bus_data_in <= rs XOR rt;
+                        reg_file_ld <= '1';
+                    ELSIF func = "000110" THEN -- ADD
+                        bus_data_in <= STD_LOGIC_VECTOR(unsigned(rs) + unsigned(rt));
+                        reg_file_ld <= '1';
+                    END IF;
+
+                ELSIF opcode = "111111" THEN -- Jump
+                    pc <= "000000" & address;
+
+                ELSE -- I-type
+                    IF opcode = "000001" THEN -- LDA
+                        AR <= immediate;
+                        bus_data_in <= mem_data_out;
+                        reg_file_ld <= '1';
+                    END IF;
+                END IF;
+            END IF;
+        END IF;
+    END PROCESS;
+
+    Memory_inst : ENTITY work.Memory
+        GENERIC MAP (
+            DATA_WIDTH => 32,
+            ADDR_WIDTH => 10,
+            INIT_FILE => "init_memory.mif"
+        )
+        PORT MAP (
+            clk => clk,
+            write_enable => '0',
+            address => pc(9 DOWNTO 0),
+            data_in => (OTHERS => '0'),
+            data_out => mem_data_out
+        );
+
+    RegFile_inst : ENTITY work.registers
+        GENERIC MAP (
+            ADDR_WIDTH => 5
+        )
+        PORT MAP (
+            clk => clk,
+            clr => clr,
+            ld => reg_file_ld,
+            data_in => bus_data_in,
+            reg_rs_addr => rs_addr,
+            reg_rt_addr => rt_addr,
+            reg_rd_addr => rd_addr,
+            bus_reg_rs => bus_reg_rs,
+            bus_reg_rt => bus_reg_rt,
+            bus_reg_rd => bus_reg_rd
+        );
+END ARCHITECTURE Beh;
+	SIGNAL pc : STD_LOGIC_VECTOR(31 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL ir : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL rt_addr, rs_addr, rd_addr : STD_LOGIC_VECTOR(4 DOWNTO 0);
+	SIGNAL shamt : STD_LOGIC_VECTOR(4 DOWNTO 0);
+	SIGNAL func : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL immediate : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL address : STD_LOGIC_VECTOR(25 DOWNTO 0);
+	SIGNAL mem_data_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL bus_reg_rs : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL bus_reg_rt : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL bus_reg_rd : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL bus_data_in : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL reg_file_ld : STD_LOGIC := '0';
+	SIGNAL AR : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL rt, rs, rd : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
 BEGIN
-	bus_sel <= 0 WHEN sc = 0 ELSE -- PC
-		1 WHEN (func = 0 AND sc = START_EXECUTE + 1) OR
-		(func = 4 AND sc = START_EXECUTE) OR
-		(func = 7 AND sc = START_EXECUTE) ELSE -- DR1
-		2 WHEN (func = 0 AND sc = START_EXECUTE) OR
-		(func = 7 AND sc = START_EXECUTE + 1) ELSE -- DR2
-		3 WHEN (immediate1 = '0' AND sc = 5) ELSE -- R1_out
-		4 WHEN (immediate2 = '0' AND sc = 6) ELSE -- R2_out
-		5 WHEN sc = 1 OR (func = 0 AND sc = START_EXECUTE + 2) ELSE
-		0;
+	-- for debugging purpose
+	debug_pc <= pc(9 DOWNTO 0);
+	debug_ir <= ir;
+	debug_opcode <= opcode;
+	debug_rt_addr <= rt_addr;
+	debug_rs_addr <= rs_addr;
+	debug_rd_addr <= rd_addr;
+	debug_shamt <= shamt;
+	debug_func <= func;
+	debug_immediate <= immediate;
+	debug_mem_data_out <= mem_data_out;
+	debug_ar <= ar;
+	-- end for debugging
 
-	Bus_Mux_inst : ENTITY work.Bus_Mux
-		GENERIC MAP(
-			BUS_SEL_MUX => BUS_SEL_MUX,
-			DATA_WIDTH => DATA_WIDTH
-		)
-		PORT MAP(
-			clk => clk,
-			bus_sel => bus_sel,
-			PC => PC_out,
-			memo => memo_out,
-			DR1 => dr1_out,
-			DR2 => dr2_out,
-			r1_out => reg1_data_out,
-			r2_out => reg2_data_out,
-			bus_data => bus_data
-		);
+	PROCESS (clk)
+	BEGIN
+		IF rising_edge(clk) THEN
+			reg_file_ld <= '0';
 
+			IF clr = '1' THEN
+				pc <= (OTHERS => '0');
+				ir <= (OTHERS => '0');
+				opcode <= (OTHERS => '0');
+				rt_addr <= (OTHERS => '0');
+				rs_addr <= (OTHERS => '0');
+				rd_addr <= (OTHERS => '0');
+				shamt <= (OTHERS => '0');
+				func <= (OTHERS => '0');
+				immediate <= (OTHERS => '0');
+				address <= (OTHERS => '0');
+				AR <= (OTHERS => '0');
+				rt <= (OTHERS => '0');
+				rs <= (OTHERS => '0');
+				rd <= (OTHERS => '0');
+			ELSE
+				-- Fetch stage
+				ar <= pc;
+				pc <= STD_LOGIC_VECTOR(unsigned(pc) + 1);
+				ir <= mem_data_out; -- * note for discussion: this line and the above are swapped to prevent data hazard
+
+				-- Decode stage
+				opcode <= ir(31 DOWNTO 26);
+				IF opcode = "000000" THEN -- R-type
+					rs_addr <= ir(20 DOWNTO 16);
+					rt_addr <= ir(25 DOWNTO 21);
+					rd_addr <= ir(15 DOWNTO 11);
+					shamt <= ir(10 DOWNTO 6);
+					func <= ir(5 DOWNTO 0);
+				ELSIF opcode = "001010" THEN -- J-type
+					address <= ir(25 DOWNTO 0);
+				ELSE -- I-type
+					rd_addr <= ir(20 DOWNTO 16);
+					rs_addr <= ir(25 DOWNTO 21);
+					immediate <= Extend_Vector(ir(15 DOWNTO 0), 32);
+				END IF;
+
+				-- Execute phase
+				IF opcode = "000000" THEN -- R-type
+					IF func = "000100" THEN -- XOR
+						bus_data_in <= rs XOR rt;
+						reg_file_ld <= '1';
+					ELSIF func = "000101" THEN -- XORi
+						bus_data_in <= rs XOR immediate;
+						reg_file_ld <= '1';
+					ELSIF func = "000110" THEN -- Add
+						bus_data_in <= STD_LOGIC_VECTOR(unsigned(rs) + unsigned(rt));
+						reg_file_ld <= '1';
+					ELSIF func = "001000" THEN -- Sub
+						bus_data_in <= STD_LOGIC_VECTOR(unsigned(rs) - unsigned(rt));
+						reg_file_ld <= '1';
+					ELSE
+						NULL;
+					END IF;
+
+					-- J Types
+				ELSIF opcode = "111111" THEN -- Jump
+					pc <= Extend_Vector(address, 32);
+
+				ELSE -- I-type
+					IF opcode = "000001" THEN -- LDA
+						AR <= immediate;
+						reg_file_ld <= '1';
+						bus_data_in <= mem_data_out; -- * note for discussion: this line and the above are swapped to prevent data hazard
+					ELSIF func = "000010" THEN -- OUT $rd, 0
+						output <= rd;
+					ELSIF opcode = "000011" THEN -- XORi
+						bus_data_in <= rs XOR immediate;
+						reg_file_ld <= '1';
+					ELSIF opcode = "0001000" THEN -- Addi
+						bus_data_in <= STD_LOGIC_VECTOR(unsigned(rs) + unsigned(immediate));
+						reg_file_ld <= '1';
+					ELSIF opcode = "000101" THEN -- Subi
+						bus_data_in <= STD_LOGIC_VECTOR(unsigned(rs) + unsigned(immediate));
+						reg_file_ld <= '1';
+					ELSIF opcode = "000110" THEN -- INP $rd, $zero, immediate
+						bus_data_in <= immediate;
+						reg_file_ld <= '1';
+					ELSE
+						NULL;
+					END IF;
+				END IF;
+			END IF;
+		END IF;
+	END PROCESS;
+
+	-- Memory instantiation
 	Memory_inst : ENTITY work.Memory
 		GENERIC MAP(
-			DATA_WIDTH => DATA_WIDTH,
-			ADDR_WIDTH => ADDR_WIDTH,
-			INIT_FILE => MEMO_INIT_FILE
+			DATA_WIDTH => 32,
+			ADDR_WIDTH => 10,
+			INIT_FILE => "init_memory.mif"
 		)
 		PORT MAP(
 			clk => clk,
 			write_enable => '0',
-			data_in => bus_data,
-			address => AR_out,
-			data_out => memo_out
+			address => pc(9 DOWNTO 0),
+			data_in => (OTHERS => '0'),
+			data_out => mem_data_out
 		);
 
-	AR_inst : ENTITY work.Generic_Reg
+	-- Register file instantiation
+	RegFile_inst : ENTITY work.registers
 		GENERIC MAP(
-			DATA_WIDTH => ADDR_WIDTH
+			ADDR_WIDTH => 5
 		)
 		PORT MAP(
 			clk => clk,
-			clr => '0',
-			inc => '0',
-			ld => To_Std_Logic((sc = 0) OR (func = 0 AND sc = START_EXECUTE)),
-			en => '0',
-			data_in => bus_data (ADDR_WIDTH - 1 DOWNTO 0),
-			data_out => AR_out
+			clr => clr,
+			ld => reg_file_ld,
+			data_in => bus_data_in,
+			reg_rs_addr => rs_addr,
+			reg_rt_addr => rt_addr,
+			reg_rd_addr => rd_addr,
+
+			bus_reg_rs => bus_reg_rs,
+			bus_reg_rt => bus_reg_rt,
+			bus_reg_rd => bus_reg_rd
 		);
-
-	IR_inst : ENTITY work.Generic_Reg
-		GENERIC MAP(
-			DATA_WIDTH => DATA_WIDTH
-		)
-		PORT MAP(
-			clk => clk,
-			clr => '0',
-			inc => '0',
-			ld => To_Std_Logic(sc = 1),
-			en => '1',
-			data_in => bus_data,
-			data_out => ir_out
-		);
-
-	PC_inst : ENTITY work.Generic_Reg
-		GENERIC MAP(
-			DATA_WIDTH => DATA_WIDTH
-		)
-		PORT MAP(
-			clk => clk,
-			clr => '0',
-			inc => To_Std_Logic(sc = 1),
-			ld => To_Std_Logic(func = 4 AND sc = START_EXECUTE),
-			en => To_Std_Logic(sc = 0),
-			data_in => bus_data,
-			data_out => pc_out
-		);
-
-	DR1_inst : ENTITY work.Generic_Reg
-		GENERIC MAP(
-			DATA_WIDTH => DATA_WIDTH
-		)
-		PORT MAP(
-			clk => clk,
-			clr => '0',
-			inc => '0',
-			ld => To_Std_Logic((immediate1 = '1' AND sc = 3) OR (immediate1 = '0' AND sc = 5)),
-			en => To_Std_Logic((func = 0 AND sc = START_EXECUTE + 1) OR (func = 4 AND sc = START_EXECUTE) OR (func = 7 AND sc = START_EXECUTE)),
-			data_in => bus_data,
-			data_out => dr1_out
-		);
-
-	DR2_inst : ENTITY work.Generic_Reg
-		GENERIC MAP(
-			DATA_WIDTH => DATA_WIDTH
-		)
-		PORT MAP(
-			clk => clk,
-			clr => '0',
-			inc => '0',
-			ld => To_Std_Logic((immediate2 = '1' AND sc = 3) OR (immediate2 = '0' AND sc = 5)),
-			en => To_Std_Logic((func = 0 AND sc = START_EXECUTE) OR (func = 7 AND sc = START_EXECUTE + 1)),
-			data_in => bus_data,
-			data_out => dr2_out
-		);
-
-	registers_inst : ENTITY work.registers
-		GENERIC MAP(
-			ADDR_WIDTH => ADDR_WIDTH
-		)
-		PORT MAP(
-			clk => clk,
-			clr => '0',
-			ld1 => To_Std_Logic((func = 0 AND sc = START_EXECUTE + 1) OR (func = 7 AND sc = START_EXECUTE + 1)),
-
-			data_in => bus_data,
-
-			reg1_addr => reg1_addr,
-			reg2_addr => reg2_addr,
-
-			data_out1 => reg1_data_out,
-			data_out2 => reg2_data_out
-		);
-
-	R1_Addr_inst : ENTITY work.Generic_Reg
-		GENERIC MAP(
-			DATA_WIDTH => ADDR_WIDTH
-		)
-		PORT MAP(
-			clk => clk,
-			clr => '0',
-			inc => '0',
-			en => '1',
-			ld => To_Std_Logic((immediate1 = '0' AND sc = 3) OR (func = 0 AND sc = START_EXECUTE) OR (func = 7 AND sc = START_EXECUTE + 1)),
-			data_in => bus_data(ADDR_WIDTH - 1 DOWNTO 0),
-			data_out => reg1_addr
-		);
-
-	R2_Addr_inst : ENTITY work.Generic_Reg
-		GENERIC MAP(
-			DATA_WIDTH => ADDR_WIDTH
-		)
-		PORT MAP(
-			clk => clk,
-			clr => '0',
-			inc => '0',
-			en => '1',
-			ld => To_Std_Logic(immediate2 = '0' AND sc = 4),
-			data_in => bus_data(ADDR_WIDTH - 1 DOWNTO 0),
-			data_out => reg2_addr
-		);
-
-	-- fetch and decode
-	PROCESS (clk) BEGIN
-		IF rising_edge(clk) AND sc < START_EXECUTE THEN
-			IF (sc = 0) THEN
-			ELSIF (sc = 1) THEN
-			ELSIF (sc = 2) THEN
-				func <= to_integer(unsigned(ir_out(FUNC_ADDR_WIDTH - 1 DOWNTO 0)));
-				immediate1 <= ir_out(29);
-				immediate2 <= ir_out(30);
-				execute <= ir_out(31);
-			ELSIF (sc = 3) THEN
-				IF (immediate1 = '1') THEN
-					ir_out <= "000000000000000000000000000" & ir_out(r1_start_idx DOWNTO r1_start_idx - ADDR_WIDTH + 1); -- DR1 <- R1
-				ELSE
-					reg1_addr <= ir_out(r1_start_idx DOWNTO r1_start_idx - ADDR_WIDTH + 1);
-				END IF;
-			ELSIF (sc = 4) THEN
-				IF (immediate2 = '1') THEN
-					ir_out <= "000000000000000000000000000" & IR_out(r1_start_idx - ADDR_WIDTH DOWNTO r1_start_idx - ADDR_WIDTH - ADDR_WIDTH + 1);
-				ELSE
-					reg2_addr <= IR_out(20 DOWNTO 16);
-				END IF;
-
-			ELSIF (sc = 4) THEN
-				IF (immediate1 = '0') THEN
-				END IF;
-			ELSIF (sc = 5) THEN
-				IF (immediate2 = '0') THEN
-				END IF;
-			END IF;
-			sc <= sc + 1;
-		END IF;
-	END PROCESS;
-
-	-- -- Execute
-	-- PROCESS (clk) BEGIN
-	-- 	IF (rising_edge(clk) AND sc >= START_EXECUTE) THEN
-	-- 		IF (opcode = 0) THEN
-	-- 			-- LDA r0, x
-	-- 			-- r0 : DR1, x : DR2, R[DR1] <- Memory[DR2]
-	-- 			IF (sc = 6) THEN
-	-- 				reg1_addr <= DR1 (REG_ADDR_WIDTH - 1 DOWNTO 0);
-	-- 				bus_data <= "000000000000" & DR2 (MEMO_ADDR_WIDTH - 1 DOWNTO 0);
-	-- 			ELSIF (sc = 7) THEN
-	-- 				-- Todo: Hey memory can you.. FRICKEN SEND SOME DATA TO THE BUS but how?!
-	-- 				-- bus_data <= M[AR_out];
-	-- 			END IF;
-	-- 		END IF;
-	-- 	ELSIF (opcode = 1) THEN
-	-- 		-- INP r0
-	-- 		-- todo read from user
-	-- 	ELSIF (opcode = 2) THEN
-	-- 		-- OUT
-	-- 		-- todo output TO screen????
-	-- 	ELSIF (opcode = 3) THEN
-	-- 		-- XOR r1, r2
-	-- 		-- r1 : DR1, r2 : DR2, result : AC
-	-- 		IF (sc = 6) THEN
-	-- 			-- AC <= DR1 XOR DR2;
-	-- 		END IF;
-	-- 	ELSIF (opcode = 4) THEN
-	-- 		-- BUN r1
-	-- 		-- r1 : DR1, jumps TO r1
-	-- 		IF (sc = 6) THEN
-	-- 			PC <= DR1(3 DOWNTO 0);
-	-- 		END IF;
-	-- 	ELSIF (opcode = 6) THEN
-	-- 		-- ADD r1, r0
-	-- 		-- r1 : DR1, r0 : DR2, result : AC
-	-- 		IF (sc = 6) THEN
-	-- 			-- ac <= DR1 + DR2;
-	-- 		END IF;
-	-- 	ELSIF (opcode = 6) THEN
-	-- 		-- SUB r1, r0
-	-- 		-- r1 : DR1, r0 : DR2, result : AC
-	-- 		IF (sc = 6) THEN
-	-- 			-- ac <= DR1 - DR2;
-	-- 		END IF;
-	-- 	ELSIF (opcode = 6) THEN
-	-- 		-- SUB r1, r0
-	-- 		-- r1 : DR1, r0 : DR2, result : AC
-	-- 		IF (sc = 6) THEN
-	-- 			-- ac <= DR1 - DR2;
-	-- 		END IF;
-	-- 	ELSIF (opcode = 7) THEN
-	-- 		-- MOV r1, r0
-	-- 		-- r1 : DR1, r0 : DR2, result : R[DR1] <- r0
-	-- 		IF (sc = 6) THEN
-	-- 			-- reg1_addr <= dr1;
-	-- 		ELSIF (sc = 7) THEN
-	-- 			-- bus_data <= DR2;
-	-- 		END IF;
-	-- 	END IF;
-	-- END PROCESS;
-
-	-- data_out <= AC;
-END Beh;
+END ARCHITECTURE Beh;
