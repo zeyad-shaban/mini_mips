@@ -1,3 +1,4 @@
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
@@ -7,21 +8,20 @@ ENTITY mini_mips IS
 	PORT (
 		clk : IN STD_LOGIC;
 		clr : IN STD_LOGIC := '0';
-		input : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		output : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 
 		-- for debugging purpose
-		-- debug_pc : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		-- debug_ir : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		-- debug_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
-		debug_rt_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-		debug_rs_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-		debug_rd_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-		debug_shamt : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-		debug_func : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		debug_pc : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		debug_ir : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		debug_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		-- debug_rt_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		-- debug_rs_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		-- debug_rd_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		-- debug_shamt : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		-- debug_func : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 		debug_immediate : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		debug_mem_data_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		-- debug_ar : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		debug_ar : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		debug_bus_data_in : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		debug_bus_reg_rs : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		debug_bus_reg_rt : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -50,24 +50,23 @@ ARCHITECTURE Beh OF mini_mips IS
 
 BEGIN
 	-- for debugging purpose
-	-- debug_pc <= pc;
-	-- debug_ir <= ir;
-	-- debug_opcode <= opcode;
-	debug_rt_addr <= rt_addr;
-	debug_rs_addr <= rs_addr;
-	debug_rd_addr <= rd_addr;
-	debug_shamt <= shamt;
-	debug_func <= func;
+	debug_pc <= pc;
+	debug_ir <= ir;
+	debug_opcode <= opcode;
+	-- debug_rt_addr <= rt_addr;
+	-- debug_rs_addr <= rs_addr;
+	-- debug_rd_addr <= rd_addr;
+	-- debug_shamt <= shamt;
+	-- debug_func <= func;
 	debug_immediate <= immediate;
 	debug_mem_data_out <= mem_data_out;
-	-- debug_ar <= ar;
+	debug_ar <= ar;
 	debug_bus_data_in <= bus_data_in;
 	debug_bus_reg_rs <= bus_reg_rs;
 	debug_bus_reg_rt <= bus_reg_rt;
 	debug_bus_reg_rd <= bus_reg_rd;
 	debug_reg_file_ld <= reg_file_ld;
 	-- end for debugging
-
 	PROCESS (clk)
 	BEGIN
 		IF rising_edge(clk) THEN
@@ -86,6 +85,7 @@ BEGIN
 				address <= (OTHERS => '0');
 				AR <= (OTHERS => '0');
 			ELSE
+				output <= pc;
 				-- Fetch stage
 				ar <= pc;
 				pc <= STD_LOGIC_VECTOR(unsigned(pc) + 1);
@@ -99,7 +99,7 @@ BEGIN
 					rd_addr <= ir(15 DOWNTO 11);
 					shamt <= ir(10 DOWNTO 6);
 					func <= ir(5 DOWNTO 0);
-				ELSIF opcode = "001010" THEN -- J-type
+				ELSIF opcode = "111111" THEN -- J-type
 					address <= ir(25 DOWNTO 0);
 				ELSE -- I-type
 					rd_addr <= ir(20 DOWNTO 16);
@@ -109,42 +109,54 @@ BEGIN
 
 				-- Execute phase
 				IF opcode = "000000" THEN -- R-type
-					IF func = "000100" THEN -- XOR
+					IF func = "000001" THEN -- XOR
 						reg_file_ld <= '1';
 						bus_data_in <= bus_reg_rs XOR bus_reg_rt;
-					ELSIF func = "000101" THEN -- XORi
-						reg_file_ld <= '1';
-						bus_data_in <= bus_reg_rs XOR immediate;
-					ELSIF func = "000110" THEN -- Add
+					ELSIF func = "000010" THEN -- Add
 						reg_file_ld <= '1';
 						bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) + unsigned(bus_reg_rt));
-					ELSIF func = "001000" THEN -- Sub
+					ELSIF func = "000011" THEN -- Sub
 						reg_file_ld <= '1';
 						bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) - unsigned(bus_reg_rt));
+					ELSIF func = "000100" THEN -- ASL
+						reg_file_ld <= '1';
+						bus_data_in <= STD_LOGIC_VECTOR(shift_left(signed(bus_reg_rt), to_integer(unsigned(shamt))));
+					ELSIF func = "000101" THEN -- ASR
+						reg_file_ld <= '1';
+						bus_data_in <= STD_LOGIC_VECTOR(shift_right(signed(bus_reg_rt), to_integer(unsigned(shamt))));
+					ELSIF func = "000110" THEN -- LSL
+						reg_file_ld <= '1';
+						bus_data_in <= STD_LOGIC_VECTOR(shift_left(unsigned(bus_reg_rt), to_integer(unsigned(shamt))));
+					ELSIF func = "000111" THEN -- LSR
+						reg_file_ld <= '1';
+						bus_data_in <= STD_LOGIC_VECTOR(shift_right(unsigned(bus_reg_rt), to_integer(unsigned(shamt))));
+					ELSIF func = "001000" THEN -- ROL
+						reg_file_ld <= '1';
+						bus_data_in <= bus_reg_rt(30 DOWNTO 0) & bus_reg_rt(31);
+					ELSIF func = "001001" THEN -- ROR
+						reg_file_ld <= '1';
+						bus_data_in <= bus_reg_rt(0) & bus_reg_rt(31 DOWNTO 1);
 					END IF;
 
 					-- J Types
-				ELSIF opcode = "111111" THEN -- Jump
+				ELSIF opcode = "111111" THEN -- Jump aka BUN
 					pc <= Extend_Vector(address, 32);
 
 				ELSE -- I-type
-					IF opcode = "000001" THEN -- LDA
-						AR <= immediate;
+					IF opcode = "000001" THEN -- LH (aka input)
+						bus_data_in <= immediate;
 						reg_file_ld <= '1';
 						bus_data_in <= mem_data_out;
 					ELSIF func = "000010" THEN -- OUT $rd, 0
-						output <= bus_reg_rd;
+						-- output <= bus_reg_rd;
 					ELSIF opcode = "000011" THEN -- XORi
 						bus_data_in <= bus_reg_rs XOR immediate;
 						reg_file_ld <= '1';
-					ELSIF opcode = "0001000" THEN -- Addi
+					ELSIF opcode = "000100" THEN -- Addi
 						bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) + unsigned(immediate));
 						reg_file_ld <= '1';
 					ELSIF opcode = "000101" THEN -- Subi
 						bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) + unsigned(immediate));
-						reg_file_ld <= '1';
-					ELSIF opcode = "000110" THEN -- INP $rd, $zero, immediate
-						bus_data_in <= immediate;
 						reg_file_ld <= '1';
 					ELSE
 						NULL;
@@ -164,7 +176,7 @@ BEGIN
 		PORT MAP(
 			clk => clk,
 			write_enable => '0',
-			address => ar(9 downto 0),
+			address => ar(9 DOWNTO 0),
 			data_in => (OTHERS => '0'),
 			data_out => mem_data_out
 		);

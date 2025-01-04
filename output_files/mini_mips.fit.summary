@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon Dec 30 23:12:13 2024
+Fitter Status : Successful - Sat Jan  4 21:09:32 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : mini_mips
 Top-level Entity Name : mini_mips
 Family : MAX 10
 Device : 10M50DAF484C6GES
 Timing Models : Preliminary
-Total logic elements : 558 / 49,760 ( 1 % )
-    Total combinational functions : 411 / 49,760 ( < 1 % )
-    Dedicated logic registers : 452 / 49,760 ( < 1 % )
-Total registers : 452
-Total pins : 285 / 360 ( 79 % )
+Total logic elements : 65 / 49,760 ( < 1 % )
+    Total combinational functions : 33 / 49,760 ( < 1 % )
+    Dedicated logic registers : 64 / 49,760 ( < 1 % )
+Total registers : 64
+Total pins : 329 / 360 ( 91 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
