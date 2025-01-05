@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sun Jan  5 08:11:06 2025
+Analysis & Synthesis Status : Successful - Sun Jan  5 10:21:56 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : mini_mips
 Top-level Entity Name : mini_mips
 Family : MAX 10
-Total logic elements : 59
-    Total combinational functions : 58
-    Dedicated logic registers : 54
-Total registers : 54
+Total logic elements : 957
+    Total combinational functions : 718
+    Dedicated logic registers : 398
+Total registers : 398
 Total pins : 302
 Total virtual pins : 0
 Total memory bits : 0

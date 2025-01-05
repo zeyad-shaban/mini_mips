@@ -25,7 +25,7 @@ PACKAGE BODY Utility_Pkg IS
             RETURN vec(vec_size - 1 DOWNTO vec_size - new_size);
         ELSE
             extended_vec := (OTHERS => '0');
-            extended_vec(new_size - 1 DOWNTO new_size - vec_size) := vec;
+            extended_vec(vec_size - 1 DOWNTO 0) := vec;
             RETURN extended_vec;
         END IF;
     END FUNCTION Extend_Vector;

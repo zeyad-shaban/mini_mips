@@ -1,5 +1,10 @@
-ADD r1, r2, r1
-OUT R1
+LH r1, 10
+LH r2, 8
+Add r3, r1, r2
+OUT R3
+out r4
+MOV r4, r3
+out r4
 
 # # Load values into registers
 # LH R1, 5       # Load value at memory[5] into R1 (e.g., assume memory[5] contains 0b0000000000001010 = 10)

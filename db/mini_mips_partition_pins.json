@@ -24,6 +24,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "output[5]",
+					"strict" : false
+				},
+				{
+					"name" : "output[6]",
+					"strict" : false
+				},
+				{
+					"name" : "output[7]",
+					"strict" : false
+				},
+				{
 					"name" : "output[8]",
 					"strict" : false
 				},
@@ -69,6 +81,54 @@
 				},
 				{
 					"name" : "output[19]",
+					"strict" : false
+				},
+				{
+					"name" : "output[20]",
+					"strict" : false
+				},
+				{
+					"name" : "output[21]",
+					"strict" : false
+				},
+				{
+					"name" : "output[22]",
+					"strict" : false
+				},
+				{
+					"name" : "output[23]",
+					"strict" : false
+				},
+				{
+					"name" : "output[24]",
+					"strict" : false
+				},
+				{
+					"name" : "output[25]",
+					"strict" : false
+				},
+				{
+					"name" : "output[26]",
+					"strict" : false
+				},
+				{
+					"name" : "output[27]",
+					"strict" : false
+				},
+				{
+					"name" : "output[28]",
+					"strict" : false
+				},
+				{
+					"name" : "output[29]",
+					"strict" : false
+				},
+				{
+					"name" : "output[30]",
+					"strict" : false
+				},
+				{
+					"name" : "output[31]",
 					"strict" : false
 				},
 				{
@@ -200,7 +260,43 @@
 					"strict" : false
 				},
 				{
+					"name" : "debug_ir[1]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[3]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[11]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[12]",
+					"strict" : false
+				},
+				{
 					"name" : "debug_ir[16]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[17]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[18]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[21]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[22]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[26]",
 					"strict" : false
 				},
 				{
@@ -208,7 +304,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "debug_ir[28]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_opcode[0]",
+					"strict" : false
+				},
+				{
 					"name" : "debug_opcode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_opcode[2]",
 					"strict" : false
 				},
 				{
@@ -216,7 +324,67 @@
 					"strict" : false
 				},
 				{
+					"name" : "debug_rd_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_rd_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_immediate[1]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_immediate[3]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_immediate[11]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_immediate[12]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[12]",
+					"strict" : false
+				},
+				{
 					"name" : "debug_mem_data_out[16]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[17]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[18]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[21]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[22]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[26]",
 					"strict" : false
 				},
 				{
@@ -224,7 +392,271 @@
 					"strict" : false
 				},
 				{
+					"name" : "debug_mem_data_out[28]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[10]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[11]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[12]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[13]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[14]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[15]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[16]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[17]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[18]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[19]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[20]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[21]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[22]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[23]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[24]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[25]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[26]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[27]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[28]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[29]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[30]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_data_in[31]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[2]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[3]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[4]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[5]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[6]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[7]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[8]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[9]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[10]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[11]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[12]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[13]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[14]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[15]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[16]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[17]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[18]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[19]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[20]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[21]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[22]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[23]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[24]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[25]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[26]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[27]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[28]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[29]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[30]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rs[31]",
+					"strict" : false
+				},
+				{
 					"name" : "debug_bus_reg_rt[0]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[1]",
 					"strict" : false
 				},
 				{
@@ -232,11 +664,251 @@
 					"strict" : false
 				},
 				{
+					"name" : "debug_bus_reg_rt[3]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[4]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[5]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[6]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[7]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[8]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[9]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[10]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[11]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[12]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[13]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[14]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[15]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[16]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[17]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[18]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[19]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[20]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[21]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[22]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[23]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[24]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[25]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[26]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[27]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[28]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[29]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[30]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[31]",
+					"strict" : false
+				},
+				{
 					"name" : "debug_bus_reg_rd[0]",
 					"strict" : false
 				},
 				{
+					"name" : "debug_bus_reg_rd[1]",
+					"strict" : false
+				},
+				{
 					"name" : "debug_bus_reg_rd[2]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[3]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[4]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[5]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[6]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[7]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[8]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[9]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[10]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[11]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[12]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[13]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[14]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[15]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[16]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[17]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[18]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[19]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[20]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[21]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[22]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[23]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[24]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[25]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[26]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[27]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[28]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[29]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[30]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[31]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_reg_file_ld",
 					"strict" : false
 				},
 				{

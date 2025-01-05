@@ -71,166 +71,166 @@ CHIP  "mini_mips"  ASSIGNED TO AN: 10M50DAF484C6GES
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A1        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A2        :        :                   :         : 8         :                
-debug_mem_data_out[28]       : A3        : output : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A5        :        :                   :         : 8         :                
-output[23]                   : A6        : output : 2.5 V             :         : 8         : N              
-debug_ir[6]                  : A7        : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rs[8]          : A8        : output : 2.5 V             :         : 7         : N              
-debug_mem_data_out[11]       : A9        : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 7         :                
-debug_ir[22]                 : A11       : output : 2.5 V             :         : 7         : N              
-debug_bus_data_in[19]        : A12       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rd[12]         : A13       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rs[24]         : A14       : output : 2.5 V             :         : 7         : N              
-debug_rd_addr[3]             : A15       : output : 2.5 V             :         : 7         : N              
+debug_bus_reg_rs[20]         : A2        : output : 2.5 V             :         : 8         : N              
+debug_bus_data_in[28]        : A3        : output : 2.5 V             :         : 8         : N              
+debug_bus_data_in[27]        : A4        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rs[19]         : A5        : output : 2.5 V             :         : 8         : N              
+debug_bus_data_in[0]         : A6        : output : 2.5 V             :         : 8         : N              
+debug_ir[12]                 : A7        : output : 2.5 V             :         : 7         : N              
+debug_bus_data_in[21]        : A8        : output : 2.5 V             :         : 7         : N              
+debug_immediate[3]           : A9        : output : 2.5 V             :         : 7         : N              
+debug_ir[26]                 : A10       : output : 2.5 V             :         : 7         : N              
+debug_ir[11]                 : A11       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 7         :                
+debug_bus_reg_rd[11]         : A13       : output : 2.5 V             :         : 7         : N              
+debug_mem_data_out[15]       : A14       : output : 2.5 V             :         : 7         : N              
+debug_immediate[27]          : A15       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A16       :        :                   :         : 7         :                
-debug_ir[5]                  : A17       : output : 2.5 V             :         : 7         : N              
-debug_opcode[3]              : A18       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rs[15]         : A19       : output : 2.5 V             :         : 7         : N              
-debug_bus_data_in[30]        : A20       : output : 2.5 V             :         : 7         : N              
-debug_ir[25]                 : A21       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A17       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : A18       :        :                   :         : 7         :                
+debug_opcode[5]              : A19       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A20       :        :                   :         : 7         :                
+debug_mem_data_out[8]        : A21       : output : 2.5 V             :         : 6         : N              
 GND                          : A22       : gnd    :                   :         :           :                
-debug_bus_reg_rs[27]         : AA1       : output : 2.5 V             :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA2       :        :                   :         : 3         :                
-debug_bus_data_in[20]        : AA3       : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rt[31]         : AA1       : output : 2.5 V             :         : 3         : N              
+debug_immediate[0]           : AA2       : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rs[26]         : AA3       : output : 2.5 V             :         : 3         : N              
 GND                          : AA4       : gnd    :                   :         :           :                
-debug_bus_reg_rt[31]         : AA5       : output : 2.5 V             :         : 3         : N              
-debug_mem_data_out[6]        : AA6       : output : 2.5 V             :         : 3         : N              
-debug_bus_data_in[2]         : AA7       : output : 2.5 V             :         : 3         : N              
-debug_bus_data_in[8]         : AA8       : output : 2.5 V             :         : 3         : N              
-debug_immediate[15]          : AA9       : output : 2.5 V             :         : 3         : N              
-debug_bus_reg_rt[26]         : AA10      : output : 2.5 V             :         : 3         : N              
-debug_bus_reg_rd[4]          : AA11      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :         : 4         :                
-debug_mem_data_out[4]        : AA13      : output : 2.5 V             :         : 4         : N              
-debug_bus_reg_rs[19]         : AA14      : output : 2.5 V             :         : 4         : N              
-output[28]                   : AA15      : output : 2.5 V             :         : 4         : N              
-debug_opcode[5]              : AA16      : output : 2.5 V             :         : 4         : N              
-debug_bus_data_in[17]        : AA17      : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rd[24]         : AA5       : output : 2.5 V             :         : 3         : N              
+output[12]                   : AA6       : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[18]         : AA7       : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[26]         : AA8       : output : 2.5 V             :         : 3         : N              
+output[18]                   : AA9       : output : 2.5 V             :         : 3         : N              
+output[30]                   : AA10      : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[25]         : AA11      : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rs[21]         : AA12      : output : 2.5 V             :         : 4         : N              
+output[7]                    : AA13      : output : 2.5 V             :         : 4         : N              
+output[4]                    : AA14      : output : 2.5 V             :         : 4         : N              
+output[5]                    : AA15      : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rs[11]         : AA16      : output : 2.5 V             :         : 4         : N              
+output[15]                   : AA17      : output : 2.5 V             :         : 4         : N              
 GND                          : AA18      : gnd    :                   :         :           :                
-debug_bus_reg_rt[6]          : AA19      : output : 2.5 V             :         : 4         : N              
-debug_bus_reg_rs[11]         : AA20      : output : 2.5 V             :         : 4         : N              
+debug_ir[21]                 : AA19      : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rs[2]          : AA20      : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA21      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA22      :        :                   :         : 5         :                
 GND                          : AB1       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB2       :        :                   :         : 3         :                
-debug_bus_reg_rs[13]         : AB3       : output : 2.5 V             :         : 3         : N              
-debug_mem_data_out[17]       : AB4       : output : 2.5 V             :         : 3         : N              
-debug_bus_reg_rs[7]          : AB5       : output : 2.5 V             :         : 3         : N              
-output[25]                   : AB6       : output : 2.5 V             :         : 3         : N              
-debug_immediate[19]          : AB7       : output : 2.5 V             :         : 3         : N              
-debug_bus_reg_rs[30]         : AB8       : output : 2.5 V             :         : 3         : N              
-debug_bus_reg_rd[15]         : AB9       : output : 2.5 V             :         : 3         : N              
-debug_bus_data_in[27]        : AB10      : output : 2.5 V             :         : 4         : N              
-debug_immediate[11]          : AB11      : output : 2.5 V             :         : 4         : N              
-debug_immediate[20]          : AB12      : output : 2.5 V             :         : 4         : N              
-debug_mem_data_out[3]        : AB13      : output : 2.5 V             :         : 4         : N              
-debug_ir[4]                  : AB14      : output : 2.5 V             :         : 4         : N              
-debug_bus_reg_rt[29]         : AB15      : output : 2.5 V             :         : 4         : N              
-debug_bus_reg_rd[31]         : AB16      : output : 2.5 V             :         : 4         : N              
-debug_bus_reg_rs[9]          : AB17      : output : 2.5 V             :         : 4         : N              
-debug_bus_reg_rs[2]          : AB18      : output : 2.5 V             :         : 4         : N              
-debug_bus_reg_rs[28]         : AB19      : output : 2.5 V             :         : 4         : N              
-debug_mem_data_out[21]       : AB20      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB21      :        :                   :         : 4         :                
+debug_bus_reg_rs[31]         : AB2       : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[0]          : AB3       : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rs[24]         : AB4       : output : 2.5 V             :         : 3         : N              
+output[29]                   : AB5       : output : 2.5 V             :         : 3         : N              
+output[23]                   : AB6       : output : 2.5 V             :         : 3         : N              
+output[14]                   : AB7       : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[28]         : AB8       : output : 2.5 V             :         : 3         : N              
+output[19]                   : AB9       : output : 2.5 V             :         : 3         : N              
+debug_rd_addr[1]             : AB10      : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rd[13]         : AB11      : output : 2.5 V             :         : 4         : N              
+debug_opcode[0]              : AB12      : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rd[1]          : AB13      : output : 2.5 V             :         : 4         : N              
+output[31]                   : AB14      : output : 2.5 V             :         : 4         : N              
+output[10]                   : AB15      : output : 2.5 V             :         : 4         : N              
+output[6]                    : AB16      : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rd[10]         : AB17      : output : 2.5 V             :         : 4         : N              
+debug_bus_data_in[31]        : AB18      : output : 2.5 V             :         : 4         : N              
+debug_ir[3]                  : AB19      : output : 2.5 V             :         : 4         : N              
+debug_bus_data_in[11]        : AB20      : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rd[6]          : AB21      : output : 2.5 V             :         : 4         : N              
 GND                          : AB22      : gnd    :                   :         :           :                
-debug_ir[20]                 : B1        : output : 2.5 V             :         : 8         : N              
-debug_bus_reg_rt[30]         : B2        : output : 2.5 V             :         : 8         : N              
-debug_ir[17]                 : B3        : output : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B4        :        :                   :         : 8         :                
-debug_immediate[7]           : B5        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rt[14]         : B1        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rt[6]          : B2        : output : 2.5 V             :         : 8         : N              
+debug_bus_data_in[22]        : B3        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rs[14]         : B4        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rs[10]         : B5        : output : 2.5 V             :         : 8         : N              
 GND                          : B6        : gnd    :                   :         :           :                
-debug_ir[10]                 : B7        : output : 2.5 V             :         : 8         : N              
-debug_ir[14]                 : B8        : output : 2.5 V             :         : 7         : N              
+debug_bus_reg_rt[25]         : B7        : output : 2.5 V             :         : 8         : N              
+debug_bus_data_in[9]         : B8        : output : 2.5 V             :         : 7         : N              
 GND                          : B9        : gnd    :                   :         :           :                
-debug_bus_reg_rs[23]         : B10       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rd[9]          : B11       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rd[13]         : B12       : output : 2.5 V             :         : 7         : N              
+debug_bus_reg_rt[12]         : B10       : output : 2.5 V             :         : 7         : N              
+debug_bus_data_in[13]        : B11       : output : 2.5 V             :         : 7         : N              
+debug_bus_data_in[15]        : B12       : output : 2.5 V             :         : 7         : N              
 GND                          : B13       : gnd    :                   :         :           :                
-debug_bus_reg_rt[11]         : B14       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rs[17]         : B15       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rs[10]         : B16       : output : 2.5 V             :         : 7         : N              
-debug_mem_data_out[0]        : B17       : output : 2.5 V             :         : 7         : N              
+debug_mem_data_out[9]        : B14       : output : 2.5 V             :         : 7         : N              
+debug_immediate[10]          : B15       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B16       :        :                   :         : 7         :                
+debug_mem_data_out[25]       : B17       : output : 2.5 V             :         : 7         : N              
 GND                          : B18       : gnd    :                   :         :           :                
-debug_ir[26]                 : B19       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rt[3]          : B20       : output : 2.5 V             :         : 6         : N              
-debug_bus_reg_rd[3]          : B21       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B22       :        :                   :         : 6         :                
-debug_immediate[12]          : C1        : output : 2.5 V             :         : 1B        : N              
-debug_bus_reg_rt[5]          : C2        : output : 2.5 V             :         : 8         : N              
-debug_bus_data_in[25]        : C3        : output : 2.5 V             :         : 8         : N              
-debug_bus_reg_rd[30]         : C4        : output : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C5        :        :                   :         : 8         :                
-debug_bus_reg_rt[1]          : C6        : output : 2.5 V             :         : 8         : N              
-debug_bus_reg_rs[16]         : C7        : output : 2.5 V             :         : 8         : N              
-debug_bus_reg_rt[9]          : C8        : output : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :         : 7         :                
-output[27]                   : C10       : output : 2.5 V             :         : 7         : N              
-output[24]                   : C11       : output : 2.5 V             :         : 7         : N              
-debug_immediate[5]           : C12       : output : 2.5 V             :         : 7         : N              
-debug_bus_data_in[28]        : C13       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rd[20]         : C14       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rd[25]         : C15       : output : 2.5 V             :         : 7         : N              
+debug_mem_data_out[20]       : B19       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B20       :        :                   :         : 6         :                
+debug_immediate[19]          : B21       : output : 2.5 V             :         : 6         : N              
+debug_mem_data_out[13]       : B22       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C1        :        :                   :         : 1B        :                
+debug_bus_data_in[19]        : C2        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rt[3]          : C3        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rs[4]          : C4        : output : 2.5 V             :         : 8         : N              
+debug_bus_data_in[30]        : C5        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rs[12]         : C6        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rs[8]          : C7        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rt[7]          : C8        : output : 2.5 V             :         : 8         : N              
+debug_immediate[1]           : C9        : output : 2.5 V             :         : 7         : N              
+debug_bus_reg_rd[4]          : C10       : output : 2.5 V             :         : 7         : N              
+debug_ir[16]                 : C11       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C12       :        :                   :         : 7         :                
+debug_mem_data_out[4]        : C13       : output : 2.5 V             :         : 7         : N              
+debug_ir[5]                  : C14       : output : 2.5 V             :         : 7         : N              
+debug_opcode[3]              : C15       : output : 2.5 V             :         : 7         : N              
 debug_mem_data_out[24]       : C16       : output : 2.5 V             :         : 7         : N              
-debug_ir[15]                 : C17       : output : 2.5 V             :         : 7         : N              
-debug_mem_data_out[9]        : C18       : output : 2.5 V             :         : 7         : N              
-debug_mem_data_out[25]       : C19       : output : 2.5 V             :         : 7         : N              
-debug_mem_data_out[8]        : C20       : output : 2.5 V             :         : 6         : N              
-debug_bus_data_in[12]        : C21       : output : 2.5 V             :         : 6         : N              
-debug_ir[16]                 : C22       : output : 2.5 V             :         : 6         : N              
-debug_bus_data_in[26]        : D1        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C17       :        :                   :         : 7         :                
+debug_mem_data_out[5]        : C18       : output : 2.5 V             :         : 7         : N              
+debug_rd_addr[3]             : C19       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C20       :        :                   :         : 6         :                
+debug_pc[20]                 : C21       : output : 2.5 V             :         : 6         : N              
+debug_pc[0]                  : C22       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 1B        :                
-debug_immediate[18]          : D3        : output : 2.5 V             :         : 1B        : N              
+debug_ir[10]                 : D3        : output : 2.5 V             :         : 1B        : N              
 GND                          : D4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D5        :        :                   :         : 8         :                
-debug_bus_reg_rd[6]          : D6        : output : 2.5 V             :         : 8         : N              
-debug_immediate[25]          : D7        : output : 2.5 V             :         : 8         : N              
-debug_ir[18]                 : D8        : output : 2.5 V             :         : 8         : N              
-debug_bus_reg_rt[12]         : D9        : output : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D10       :        :                   :         : 8         :                
+debug_bus_data_in[10]        : D5        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rs[0]          : D6        : output : 2.5 V             :         : 8         : N              
+debug_bus_data_in[24]        : D7        : output : 2.5 V             :         : 8         : N              
+output[21]                   : D8        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rs[18]         : D9        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rt[29]         : D10       : output : 2.5 V             :         : 8         : N              
 GND                          : D11       : gnd    :                   :         :           :                
-debug_bus_reg_rt[4]          : D12       : output : 2.5 V             :         : 7         : N              
+debug_bus_data_in[12]        : D12       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D13       :        :                   :         : 7         :                
-debug_ir[7]                  : D14       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rt[20]         : D15       : output : 2.5 V             :         : 7         : N              
+debug_ir[13]                 : D14       : output : 2.5 V             :         : 7         : N              
+debug_mem_data_out[6]        : D15       : output : 2.5 V             :         : 7         : N              
 GND                          : D16       : gnd    :                   :         :           :                
-debug_bus_reg_rd[21]         : D17       : output : 2.5 V             :         : 7         : N              
-debug_mem_data_out[12]       : D18       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D17       :        :                   :         : 7         :                
+debug_ir[15]                 : D18       : output : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D19       :        :                   :         : 6         :                
 GND                          : D20       : gnd    :                   :         :           :                
-output[18]                   : D21       : output : 2.5 V             :         : 6         : N              
-output[1]                    : D22       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E1        :        :                   :         : 1B        :                
+debug_pc[28]                 : D21       : output : 2.5 V             :         : 6         : N              
+debug_pc[25]                 : D22       : output : 2.5 V             :         : 6         : N              
+debug_bus_data_in[18]        : E1        : output : 2.5 V             :         : 1B        : N              
 GND                          : E2        : gnd    :                   :         :           :                
 debug_ir[24]                 : E3        : output : 2.5 V             :         : 1A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 1A        :                
+debug_mem_data_out[7]        : E4        : output : 2.5 V             :         : 1A        : N              
 NC                           : E5        :        :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E6        :        :                   :         : 8         :                
+debug_bus_data_in[16]        : E6        : output : 2.5 V             :         : 8         : N              
 GND                          : E7        : gnd    :                   :         :           :                
-debug_bus_data_in[23]        : E8        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rt[5]          : E8        : output : 2.5 V             :         : 8         : N              
 debug_bus_data_in[5]         : E9        : output : 2.5 V             :         : 8         : N              
-debug_immediate[30]          : E10       : output : 2.5 V             :         : 8         : N              
-debug_bus_reg_rt[16]         : E11       : output : 2.5 V             :         : 8         : N              
-debug_bus_reg_rt[10]         : E12       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rs[26]         : E13       : output : 2.5 V             :         : 7         : N              
-debug_immediate[22]          : E14       : output : 2.5 V             :         : 7         : N              
-output[29]                   : E15       : output : 2.5 V             :         : 7         : N              
-debug_mem_data_out[23]       : E16       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E17       :        :                   :         : 6         :                
-debug_mem_data_out[10]       : E18       : output : 2.5 V             :         : 6         : N              
-debug_bus_data_in[9]         : E19       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E20       :        :                   :         : 6         :                
-output[3]                    : E21       : output : 2.5 V             :         : 6         : N              
-output[14]                   : E22       : output : 2.5 V             :         : 6         : N              
-debug_bus_reg_rs[5]          : F1        : output : 2.5 V             :         : 1B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F2        :        :                   :         : 1B        :                
-debug_bus_data_in[24]        : F3        : output : 2.5 V             :         : 1A        : N              
+debug_bus_reg_rt[0]          : E10       : output : 2.5 V             :         : 8         : N              
+debug_rd_addr[0]             : E11       : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E12       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E13       :        :                   :         : 7         :                
+debug_immediate[18]          : E14       : output : 2.5 V             :         : 7         : N              
+debug_immediate[5]           : E15       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E16       :        :                   :         : 7         :                
+debug_mem_data_out[19]       : E17       : output : 2.5 V             :         : 6         : N              
+debug_immediate[30]          : E18       : output : 2.5 V             :         : 6         : N              
+debug_pc[30]                 : E19       : output : 2.5 V             :         : 6         : N              
+debug_pc[27]                 : E20       : output : 2.5 V             :         : 6         : N              
+debug_pc[21]                 : E21       : output : 2.5 V             :         : 6         : N              
+debug_pc[19]                 : E22       : output : 2.5 V             :         : 6         : N              
+debug_bus_reg_rd[21]         : F1        : output : 2.5 V             :         : 1B        : N              
+debug_reg_file_ld            : F2        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F4        :        :                   :         : 1A        :                
-output[30]                   : F5        : output : 2.5 V             :         : 1A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :         : 1A        :                
 NC                           : F6        :        :                   :         :           :                
-debug_bus_reg_rt[23]         : F7        : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rt[19]         : F7        : output : 2.5 V             :         : 8         : N              
 ~ALTERA_CONF_DONE~ / RESERVED_INPUT : F8        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
 VCCIO8                       : F9        : power  :                   : 2.5V    : 8         :                
 GND                          : F10       : gnd    :                   :         :           :                
@@ -238,18 +238,18 @@ VCCIO8                       : F11       : power  :                   : 2.5V    
 VCCIO7                       : F12       : power  :                   : 2.5V    : 7         :                
 GND                          : F13       : gnd    :                   :         :           :                
 VCCIO7                       : F14       : power  :                   : 2.5V    : 7         :                
-debug_bus_reg_rd[1]          : F15       : output : 2.5 V             :         : 7         : N              
-output[22]                   : F16       : output : 2.5 V             :         : 7         : N              
-debug_ir[2]                  : F17       : output : 2.5 V             :         : 6         : N              
-debug_bus_data_in[22]        : F18       : output : 2.5 V             :         : 6         : N              
-debug_immediate[26]          : F19       : output : 2.5 V             :         : 6         : N              
-output[9]                    : F20       : output : 2.5 V             :         : 6         : N              
-debug_ir[27]                 : F21       : output : 2.5 V             :         : 6         : N              
-debug_bus_reg_rd[0]          : F22       : output : 2.5 V             :         : 6         : N              
-debug_mem_data_out[26]       : G1        : output : 2.5 V             :         : 1B        : N              
+debug_immediate[15]          : F15       : output : 2.5 V             :         : 7         : N              
+debug_immediate[6]           : F16       : output : 2.5 V             :         : 7         : N              
+debug_immediate[4]           : F17       : output : 2.5 V             :         : 6         : N              
+debug_pc[23]                 : F18       : output : 2.5 V             :         : 6         : N              
+debug_pc[22]                 : F19       : output : 2.5 V             :         : 6         : N              
+debug_pc[3]                  : F20       : output : 2.5 V             :         : 6         : N              
+debug_pc[6]                  : F21       : output : 2.5 V             :         : 6         : N              
+debug_pc[1]                  : F22       : output : 2.5 V             :         : 6         : N              
+debug_bus_data_in[25]        : G1        : output : 2.5 V             :         : 1B        : N              
 ~ALTERA_TCK~ / RESERVED_INPUT : G2        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
-debug_mem_data_out[22]       : G3        : output : 2.5 V             :         : 1A        : N              
-debug_ir[3]                  : G4        : output : 2.5 V             :         : 1A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G3        :        :                   :         : 1A        :                
+debug_opcode[4]              : G4        : output : 2.5 V             :         : 1A        : N              
 ANAIN1                       : G5        :        :                   :         :           :                
 GND                          : G6        : gnd    :                   :         :           :                
 VCCD_PLL3                    : G7        : power  :                   : 1.2V    :           :                
@@ -262,194 +262,194 @@ VCCIO7                       : G13       : power  :                   : 2.5V    
 VCCIO7                       : G14       : power  :                   : 2.5V    : 7         :                
 GND                          : G15       : gnd    :                   :         :           :                
 VCCD_PLL2                    : G16       : power  :                   : 1.2V    :           :                
-debug_bus_reg_rt[28]         : G17       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 6         :                
 GND                          : G18       : gnd    :                   :         :           :                
-debug_bus_reg_rd[2]          : G19       : output : 2.5 V             :         : 6         : N              
-clr                          : G20       : input  : 2.5 V             :         : 6         : N              
+debug_pc[5]                  : G19       : output : 2.5 V             :         : 6         : N              
+debug_pc[4]                  : G20       : output : 2.5 V             :         : 6         : N              
 GND                          : G21       : gnd    :                   :         :           :                
-output[15]                   : G22       : output : 2.5 V             :         : 6         : N              
-debug_rd_addr[4]             : H1        : output : 2.5 V             :         : 1B        : N              
+debug_pc[7]                  : G22       : output : 2.5 V             :         : 6         : N              
+debug_bus_data_in[29]        : H1        : output : 2.5 V             :         : 1B        : N              
 ~ALTERA_TMS~ / RESERVED_INPUT_WITH_WEAK_PULLUP : H2        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
-debug_bus_reg_rd[22]         : H3        : output : 2.5 V             :         : 1A        : N              
-debug_immediate[1]           : H4        : output : 2.5 V             :         : 1A        : N              
+debug_ir[6]                  : H3        : output : 2.5 V             :         : 1A        : N              
+debug_immediate[8]           : H4        : output : 2.5 V             :         : 1A        : N              
 REFGND                       : H5        :        :                   :         :           :                
 ADC_VREF                     : H6        :        :                   :         :           :                
 VCCA_ADC                     : H7        : power  :                   : 2.5V    :           :                
 VCCA3                        : H8        : power  :                   : 2.5V    :           :                
 ~ALTERA_nCONFIG~ / RESERVED_INPUT : H9        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
 ~ALTERA_CONFIG_SEL~ / RESERVED_INPUT : H10       : input  : 2.5 V             :         : 8         : N              
-debug_mem_data_out[7]        : H11       : output : 2.5 V             :         : 8         : N              
-debug_bus_reg_rs[14]         : H12       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rd[28]         : H13       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rd[7]          : H14       : output : 2.5 V             :         : 7         : N              
+debug_bus_reg_rs[1]          : H11       : output : 2.5 V             :         : 8         : N              
+debug_bus_reg_rt[10]         : H12       : output : 2.5 V             :         : 7         : N              
+debug_ir[1]                  : H13       : output : 2.5 V             :         : 7         : N              
+debug_immediate[20]          : H14       : output : 2.5 V             :         : 7         : N              
 VCCA2                        : H15       : power  :                   : 2.5V    :           :                
 VCCIO6                       : H16       : power  :                   : 2.5V    : 6         :                
-debug_mem_data_out[5]        : H17       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H18       :        :                   :         : 6         :                
-debug_mem_data_out[31]       : H19       : output : 2.5 V             :         : 6         : N              
-debug_immediate[23]          : H20       : output : 2.5 V             :         : 6         : N              
-output[10]                   : H21       : output : 2.5 V             :         : 6         : N              
-output[12]                   : H22       : output : 2.5 V             :         : 6         : N              
-debug_ir[13]                 : J1        : output : 2.5 V             :         : 1B        : N              
+debug_immediate[14]          : H19       : output : 2.5 V             :         : 6         : N              
+debug_immediate[17]          : H20       : output : 2.5 V             :         : 6         : N              
+debug_pc[2]                  : H21       : output : 2.5 V             :         : 6         : N              
+clr                          : H22       : input  : 2.5 V             :         : 6         : N              
+debug_bus_data_in[26]        : J1        : output : 2.5 V             :         : 1B        : N              
 GND                          : J2        : gnd    :                   :         :           :                
-debug_bus_reg_rd[24]         : J3        : output : 2.5 V             :         : 1A        : N              
-debug_bus_reg_rs[29]         : J4        : output : 2.5 V             :         : 1A        : N              
+debug_ir[9]                  : J3        : output : 2.5 V             :         : 1A        : N              
+debug_mem_data_out[0]        : J4        : output : 2.5 V             :         : 1A        : N              
 ANAIN2                       : J5        :        :                   :         :           :                
 GND                          : J6        : gnd    :                   :         :           :                
 VCCINT                       : J7        : power  :                   : 1.2V    :           :                
-output[21]                   : J8        : output : 2.5 V             :         : 1A        : N              
-debug_bus_data_in[29]        : J9        : output : 2.5 V             :         : 1A        : N              
-debug_immediate[16]          : J10       : output : 2.5 V             :         : 8         : N              
-debug_bus_reg_rt[7]          : J11       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rt[27]         : J12       : output : 2.5 V             :         : 7         : N              
-debug_bus_reg_rs[3]          : J13       : output : 2.5 V             :         : 7         : N              
-debug_opcode[2]              : J14       : output : 2.5 V             :         : 6         : N              
-debug_bus_data_in[16]        : J15       : output : 2.5 V             :         : 6         : N              
+debug_immediate[13]          : J8        : output : 2.5 V             :         : 1A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J9        :        :                   :         : 1A        :                
+debug_bus_data_in[14]        : J10       : output : 2.5 V             :         : 8         : N              
+debug_bus_data_in[20]        : J11       : output : 2.5 V             :         : 7         : N              
+debug_ir[18]                 : J12       : output : 2.5 V             :         : 7         : N              
+debug_ir[30]                 : J13       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J14       :        :                   :         : 6         :                
+debug_immediate[16]          : J15       : output : 2.5 V             :         : 6         : N              
 GND                          : J16       : gnd    :                   :         :           :                
 VCCIO6                       : J17       : power  :                   : 2.5V    : 6         :                
-debug_ir[31]                 : J18       : output : 2.5 V             :         : 6         : N              
+debug_pc[12]                 : J18       : output : 2.5 V             :         : 6         : N              
 GND                          : J19       : gnd    :                   :         :           :                
-debug_bus_reg_rt[14]         : J20       : output : 2.5 V             :         : 6         : N              
-debug_bus_reg_rt[0]          : J21       : output : 2.5 V             :         : 6         : N              
-debug_mem_data_out[16]       : J22       : output : 2.5 V             :         : 6         : N              
-debug_mem_data_out[1]        : K1        : output : 2.5 V             :         : 1B        : N              
-debug_bus_reg_rt[19]         : K2        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J20       :        :                   :         : 6         :                
+debug_ir[27]                 : J21       : output : 2.5 V             :         : 6         : N              
+debug_bus_data_in[7]         : J22       : output : 2.5 V             :         : 6         : N              
+debug_immediate[11]          : K1        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K2        :        :                   :         : 1B        :                
 GND                          : K3        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K4        :        :                   :         : 1A        :                
-debug_immediate[13]          : K5        : output : 2.5 V             :         : 1A        : N              
+debug_immediate[23]          : K4        : output : 2.5 V             :         : 1A        : N              
+debug_immediate[2]           : K5        : output : 2.5 V             :         : 1A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K6        :        :                   :         : 1A        :                
 VCCIO1A                      : K7        : power  :                   : 2.5V    : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 1B        :                
-debug_bus_data_in[1]         : K9        : output : 2.5 V             :         : 1B        : N              
+debug_mem_data_out[14]       : K9        : output : 2.5 V             :         : 1B        : N              
 GND                          : K10       : gnd    :                   :         :           :                
 VCC                          : K11       : power  :                   : 1.2V    :           :                
 GND                          : K12       : gnd    :                   :         :           :                
 VCC                          : K13       : power  :                   : 1.2V    :           :                
-output[26]                   : K14       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : K15       :        :                   :         : 6         :                
+debug_ir[23]                 : K14       : output : 2.5 V             :         : 6         : N              
+debug_immediate[26]          : K15       : output : 2.5 V             :         : 6         : N              
 VCCIO6                       : K16       : power  :                   : 2.5V    : 6         :                
 VCCIO6                       : K17       : power  :                   : 2.5V    : 6         :                
-debug_bus_reg_rd[26]         : K18       : output : 2.5 V             :         : 6         : N              
-debug_mem_data_out[19]       : K19       : output : 2.5 V             :         : 6         : N              
-debug_bus_data_in[3]         : K20       : output : 2.5 V             :         : 6         : N              
-debug_mem_data_out[27]       : K21       : output : 2.5 V             :         : 6         : N              
-debug_bus_reg_rt[2]          : K22       : output : 2.5 V             :         : 6         : N              
-debug_ir[19]                 : L1        : output : 2.5 V             :         : 1B        : N              
-debug_ir[0]                  : L2        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K18       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K19       :        :                   :         : 6         :                
+debug_immediate[29]          : K20       : output : 2.5 V             :         : 6         : N              
+debug_bus_data_in[1]         : K21       : output : 2.5 V             :         : 6         : N              
+debug_pc[8]                  : K22       : output : 2.5 V             :         : 6         : N              
+debug_bus_data_in[17]        : L1        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L2        :        :                   :         : 1B        :                
 DNU                          : L3        :        :                   :         :           :                
 ~ALTERA_TDI~ / RESERVED_INPUT_WITH_WEAK_PULLUP : L4        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
 GND                          : L5        : gnd    :                   :         :           :                
 VCCIO1A                      : L6        : power  :                   : 2.5V    : 1A        :                
 VCCIO1B                      : L7        : power  :                   : 2.5V    : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 1B        :                
-debug_ir[9]                  : L9        : output : 2.5 V             :         : 1B        : N              
+debug_bus_reg_rt[18]         : L9        : output : 2.5 V             :         : 1B        : N              
 VCC                          : L10       : power  :                   : 1.2V    :           :                
 VCC                          : L11       : power  :                   : 1.2V    :           :                
 VCC                          : L12       : power  :                   : 1.2V    :           :                
 GND                          : L13       : gnd    :                   :         :           :                
-debug_bus_reg_rd[11]         : L14       : output : 2.5 V             :         : 6         : N              
-output[11]                   : L15       : output : 2.5 V             :         : 6         : N              
+debug_pc[26]                 : L14       : output : 2.5 V             :         : 6         : N              
+debug_pc[18]                 : L15       : output : 2.5 V             :         : 6         : N              
 VCCIO6                       : L16       : power  :                   : 2.5V    : 6         :                
 GND                          : L17       : gnd    :                   :         :           :                
-debug_bus_reg_rd[8]          : L18       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L19       :        :                   :         : 6         :                
-debug_bus_reg_rt[18]         : L20       : output : 2.5 V             :         : 6         : N              
+debug_pc[31]                 : L18       : output : 2.5 V             :         : 6         : N              
+debug_pc[29]                 : L19       : output : 2.5 V             :         : 6         : N              
+debug_pc[15]                 : L20       : output : 2.5 V             :         : 6         : N              
 GND                          : L21       : gnd    :                   :         :           :                
-debug_rd_addr[0]             : L22       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[28]       : L22       : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M1        :        :                   :         : 2         :                
-debug_ir[23]                 : M2        : output : 2.5 V             :         : 2         : N              
-debug_ir[29]                 : M3        : output : 2.5 V             :         : 1B        : N              
-debug_bus_reg_rs[20]         : M4        : output : 2.5 V             :         : 1B        : N              
+debug_ir[0]                  : M2        : output : 2.5 V             :         : 2         : N              
+debug_immediate[12]          : M3        : output : 2.5 V             :         : 1B        : N              
+debug_bus_reg_rt[23]         : M4        : output : 2.5 V             :         : 1B        : N              
 ~ALTERA_TDO~                 : M5        : output : 2.5 V             :         : 1B        : N              
 VCCIO1B                      : M6        : power  :                   : 2.5V    : 1B        :                
 GND                          : M7        : gnd    :                   :         :           :                
 clk                          : M8        : input  : 2.5 V             :         : 2         : N              
-debug_bus_reg_rd[14]         : M9        : output : 2.5 V             :         : 2         : N              
+debug_bus_reg_rt[27]         : M9        : output : 2.5 V             :         : 2         : N              
 GND                          : M10       : gnd    :                   :         :           :                
 VCC                          : M11       : power  :                   : 1.2V    :           :                
 VCC                          : M12       : power  :                   : 1.2V    :           :                
 VCC                          : M13       : power  :                   : 1.2V    :           :                
-output[17]                   : M14       : output : 2.5 V             :         : 6         : N              
-output[16]                   : M15       : output : 2.5 V             :         : 6         : N              
+debug_pc[24]                 : M14       : output : 2.5 V             :         : 6         : N              
+debug_pc[17]                 : M15       : output : 2.5 V             :         : 6         : N              
 GND                          : M16       : gnd    :                   :         :           :                
 VCCIO6                       : M17       : power  :                   : 2.5V    : 6         :                
-debug_reg_file_ld            : M18       : output : 2.5 V             :         : 6         : N              
+debug_pc[16]                 : M18       : output : 2.5 V             :         : 6         : N              
 GND                          : M19       : gnd    :                   :         :           :                
-output[13]                   : M20       : output : 2.5 V             :         : 6         : N              
-output[2]                    : M21       : output : 2.5 V             :         : 5         : N              
-debug_pc[3]                  : M22       : output : 2.5 V             :         : 5         : N              
-debug_bus_reg_rd[5]          : N1        : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N2        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N3        :        :                   :         : 2         :                
-debug_mem_data_out[18]       : N4        : output : 2.5 V             :         : 2         : N              
-output[6]                    : N5        : output : 2.5 V             :         : 2         : N              
+debug_pc[13]                 : M20       : output : 2.5 V             :         : 6         : N              
+debug_bus_data_in[2]         : M21       : output : 2.5 V             :         : 5         : N              
+debug_bus_data_in[3]         : M22       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N1        :        :                   :         : 2         :                
+debug_bus_reg_rs[25]         : N2        : output : 2.5 V             :         : 2         : N              
+debug_bus_reg_rs[23]         : N3        : output : 2.5 V             :         : 2         : N              
+debug_bus_reg_rs[6]          : N4        : output : 2.5 V             :         : 2         : N              
+debug_bus_data_in[6]         : N5        : output : 2.5 V             :         : 2         : N              
 VCCIO2                       : N6        : power  :                   : 2.5V    : 2         :                
 VCCIO2                       : N7        : power  :                   : 2.5V    : 2         :                
-debug_bus_reg_rd[18]         : N8        : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N9        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N8        :        :                   :         : 2         :                
+debug_immediate[31]          : N9        : output : 2.5 V             :         : 2         : N              
 VCC                          : N10       : power  :                   : 1.2V    :           :                
 GND                          : N11       : gnd    :                   :         :           :                
 VCC                          : N12       : power  :                   : 1.2V    :           :                
 GND                          : N13       : gnd    :                   :         :           :                
-output[0]                    : N14       : output : 2.5 V             :         : 6         : N              
-debug_opcode[1]              : N15       : output : 2.5 V             :         : 6         : N              
+debug_bus_data_in[8]         : N14       : output : 2.5 V             :         : 6         : N              
+debug_pc[9]                  : N15       : output : 2.5 V             :         : 6         : N              
 VCCIO5                       : N16       : power  :                   : 2.5V    : 5         :                
 VCCIO6                       : N17       : power  :                   : 2.5V    : 6         :                
-output[19]                   : N18       : output : 2.5 V             :         : 6         : N              
-output[4]                    : N19       : output : 2.5 V             :         : 6         : N              
-output[8]                    : N20       : output : 2.5 V             :         : 6         : N              
-debug_pc[9]                  : N21       : output : 2.5 V             :         : 5         : N              
-debug_pc[4]                  : N22       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : P1        :        :                   :         : 2         :                
+debug_pc[11]                 : N18       : output : 2.5 V             :         : 6         : N              
+debug_pc[14]                 : N19       : output : 2.5 V             :         : 6         : N              
+debug_pc[10]                 : N20       : output : 2.5 V             :         : 6         : N              
+debug_mem_data_out[22]       : N21       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rt[2]          : N22       : output : 2.5 V             :         : 5         : N              
+debug_immediate[9]           : P1        : output : 2.5 V             :         : 2         : N              
 GND                          : P2        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P3        :        :                   :         : 2         :                
-debug_bus_reg_rt[25]         : P4        : output : 2.5 V             :         : 2         : N              
-debug_bus_data_in[4]         : P5        : output : 2.5 V             :         : 2         : N              
+debug_bus_reg_rt[1]          : P4        : output : 2.5 V             :         : 2         : N              
+debug_bus_reg_rt[21]         : P5        : output : 2.5 V             :         : 2         : N              
 GND                          : P6        : gnd    :                   :         :           :                
 VCCIO2                       : P7        : power  :                   : 2.5V    : 2         :                
-debug_bus_reg_rd[16]         : P8        : output : 2.5 V             :         : 2         : N              
-debug_immediate[24]          : P9        : output : 2.5 V             :         : 3         : N              
-debug_bus_data_in[6]         : P10       : output : 2.5 V             :         : 3         : N              
-debug_opcode[4]              : P11       : output : 2.5 V             :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : P12       :        :                   :         : 4         :                
-debug_ir[28]                 : P13       : output : 2.5 V             :         : 4         : N              
-debug_pc[6]                  : P14       : output : 2.5 V             :         : 5         : N              
-debug_pc[7]                  : P15       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P8        :        :                   :         : 2         :                
+debug_bus_reg_rt[22]         : P9        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rs[15]         : P10       : output : 2.5 V             :         : 3         : N              
+output[28]                   : P11       : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rs[16]         : P12       : output : 2.5 V             :         : 4         : N              
+output[8]                    : P13       : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rt[8]          : P14       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rt[9]          : P15       : output : 2.5 V             :         : 5         : N              
 VCCIO5                       : P16       : power  :                   : 2.5V    : 5         :                
 GND                          : P17       : gnd    :                   :         :           :                
-debug_pc[0]                  : P18       : output : 2.5 V             :         : 5         : N              
-debug_pc[8]                  : P19       : output : 2.5 V             :         : 5         : N              
-debug_pc[1]                  : P20       : output : 2.5 V             :         : 5         : N              
-debug_pc[2]                  : P21       : output : 2.5 V             :         : 5         : N              
-debug_pc[13]                 : P22       : output : 2.5 V             :         : 5         : N              
-debug_bus_reg_rs[4]          : R1        : output : 2.5 V             :         : 2         : N              
-debug_bus_data_in[7]         : R2        : output : 2.5 V             :         : 2         : N              
-debug_bus_reg_rd[23]         : R3        : output : 2.5 V             :         : 2         : N              
+debug_ir[22]                 : P18       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[21]       : P19       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[17]       : P20       : output : 2.5 V             :         : 5         : N              
+debug_ir[28]                 : P21       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rt[16]         : P22       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[10]       : R1        : output : 2.5 V             :         : 2         : N              
+debug_immediate[22]          : R2        : output : 2.5 V             :         : 2         : N              
+debug_ir[14]                 : R3        : output : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R4        :        :                   :         : 2         :                
-debug_immediate[17]          : R5        : output : 2.5 V             :         : 2         : N              
+debug_bus_reg_rt[28]         : R5        : output : 2.5 V             :         : 2         : N              
 VCCIO2                       : R6        : power  :                   : 2.5V    : 2         :                
-debug_bus_reg_rs[22]         : R7        : output : 2.5 V             :         : 2         : N              
+debug_immediate[24]          : R7        : output : 2.5 V             :         : 2         : N              
 VCCA1                        : R8        : power  :                   : 2.5V    :           :                
-debug_immediate[28]          : R9        : output : 2.5 V             :         : 3         : N              
-output[31]                   : R10       : output : 2.5 V             :         : 3         : N              
-debug_bus_data_in[0]         : R11       : output : 2.5 V             :         : 3         : N              
-debug_bus_data_in[14]        : R12       : output : 2.5 V             :         : 4         : N              
-debug_bus_reg_rs[0]          : R13       : output : 2.5 V             :         : 4         : N              
-debug_pc[18]                 : R14       : output : 2.5 V             :         : 5         : N              
-debug_pc[14]                 : R15       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rt[4]          : R9        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rs[30]         : R10       : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[29]         : R11       : output : 2.5 V             :         : 3         : N              
+debug_opcode[2]              : R12       : output : 2.5 V             :         : 4         : N              
+output[3]                    : R13       : output : 2.5 V             :         : 4         : N              
+debug_mem_data_out[26]       : R14       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rt[24]         : R15       : output : 2.5 V             :         : 5         : N              
 VCCIO5                       : R16       : power  :                   : 2.5V    : 5         :                
 VCCIO5                       : R17       : power  :                   : 2.5V    : 5         :                
-debug_pc[5]                  : R18       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[16]       : R18       : output : 2.5 V             :         : 5         : N              
 GND                          : R19       : gnd    :                   :         :           :                
-debug_pc[16]                 : R20       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[1]        : R20       : output : 2.5 V             :         : 5         : N              
 GND                          : R21       : gnd    :                   :         :           :                
-debug_pc[11]                 : R22       : output : 2.5 V             :         : 5         : N              
-debug_bus_data_in[13]        : T1        : output : 2.5 V             :         : 2         : N              
-debug_immediate[14]          : T2        : output : 2.5 V             :         : 2         : N              
-debug_bus_reg_rd[17]         : T3        : output : 2.5 V             :         : 2         : N              
+debug_bus_reg_rt[11]         : R22       : output : 2.5 V             :         : 5         : N              
+debug_immediate[7]           : T1        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T2        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T3        :        :                   :         : 2         :                
 GND                          : T4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T5        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T6        :        :                   :         : 2         :                
+debug_bus_reg_rd[23]         : T5        : output : 2.5 V             :         : 2         : N              
+debug_ir[19]                 : T6        : output : 2.5 V             :         : 2         : N              
 VCCD_PLL1                    : T7        : power  :                   : 1.2V    :           :                
 GND                          : T8        : gnd    :                   :         :           :                
 VCCIO3                       : T9        : power  :                   : 2.5V    : 3         :                
@@ -461,18 +461,18 @@ GND                          : T14       : gnd    :                   :         
 VCCA4                        : T15       : power  :                   : 2.5V    :           :                
 GND                          : T16       : gnd    :                   :         :           :                
 VCCIO5                       : T17       : power  :                   : 2.5V    : 5         :                
-debug_pc[19]                 : T18       : output : 2.5 V             :         : 5         : N              
-debug_pc[20]                 : T19       : output : 2.5 V             :         : 5         : N              
-debug_pc[30]                 : T20       : output : 2.5 V             :         : 5         : N              
-debug_pc[15]                 : T21       : output : 2.5 V             :         : 5         : N              
-debug_pc[31]                 : T22       : output : 2.5 V             :         : 5         : N              
-debug_ir[1]                  : U1        : output : 2.5 V             :         : 2         : N              
-debug_bus_reg_rs[25]         : U2        : output : 2.5 V             :         : 2         : N              
-debug_bus_reg_rt[17]         : U3        : output : 2.5 V             :         : 2         : N              
-debug_bus_reg_rs[6]          : U4        : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : U5        :        :                   :         : 2         :                
-debug_immediate[2]           : U6        : output : 2.5 V             :         : 3         : N              
-debug_bus_reg_rt[22]         : U7        : output : 2.5 V             :         : 3         : N              
+debug_mem_data_out[27]       : T18       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rs[3]          : T19       : output : 2.5 V             :         : 5         : N              
+debug_rd_addr[2]             : T20       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rs[17]         : T21       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[3]        : T22       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[23]       : U1        : output : 2.5 V             :         : 2         : N              
+debug_ir[20]                 : U2        : output : 2.5 V             :         : 2         : N              
+debug_immediate[28]          : U3        : output : 2.5 V             :         : 2         : N              
+debug_bus_reg_rd[22]         : U4        : output : 2.5 V             :         : 2         : N              
+debug_rd_addr[4]             : U5        : output : 2.5 V             :         : 2         : N              
+debug_bus_reg_rd[17]         : U6        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rt[30]         : U7        : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : U8        : power  :                   : 2.5V    : 3         :                
 VCCIO3                       : U9        : power  :                   : 2.5V    : 3         :                
 GND                          : U10       : gnd    :                   :         :           :                
@@ -480,77 +480,77 @@ VCCIO4                       : U11       : power  :                   : 2.5V    
 VCCIO4                       : U12       : power  :                   : 2.5V    : 4         :                
 GND                          : U13       : gnd    :                   :         :           :                
 VCCIO4                       : U14       : power  :                   : 2.5V    : 4         :                
-debug_mem_data_out[20]       : U15       : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rd[16]         : U15       : output : 2.5 V             :         : 4         : N              
 VCCD_PLL4                    : U16       : power  :                   : 1.2V    :           :                
-output[5]                    : U17       : output : 2.5 V             :         : 5         : N              
-debug_mem_data_out[15]       : U18       : output : 2.5 V             :         : 5         : N              
-debug_pc[24]                 : U19       : output : 2.5 V             :         : 5         : N              
-debug_pc[29]                 : U20       : output : 2.5 V             :         : 5         : N              
-debug_pc[12]                 : U21       : output : 2.5 V             :         : 5         : N              
-debug_pc[10]                 : U22       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : V1        :        :                   :         : 2         :                
+debug_ir[7]                  : U17       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U18       :        :                   :         : 5         :                
+debug_mem_data_out[30]       : U19       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rt[15]         : U20       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[18]       : U21       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rt[17]         : U22       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[29]       : V1        : output : 2.5 V             :         : 2         : N              
 GND                          : V2        : gnd    :                   :         :           :                
-debug_bus_reg_rs[18]         : V3        : output : 2.5 V             :         : 2         : N              
-debug_bus_data_in[15]        : V4        : output : 2.5 V             :         : 3         : N              
-debug_immediate[3]           : V5        : output : 2.5 V             :         : 3         : N              
+debug_bus_data_in[23]        : V3        : output : 2.5 V             :         : 2         : N              
+debug_mem_data_out[31]       : V4        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[30]         : V5        : output : 2.5 V             :         : 3         : N              
 GND                          : V6        : gnd    :                   :         :           :                
-debug_bus_reg_rd[29]         : V7        : output : 2.5 V             :         : 3         : N              
-debug_bus_reg_rt[13]         : V8        : output : 2.5 V             :         : 3         : N              
-debug_bus_reg_rd[27]         : V9        : output : 2.5 V             :         : 3         : N              
-debug_ir[11]                 : V10       : output : 2.5 V             :         : 3         : N              
-debug_opcode[0]              : V11       : output : 2.5 V             :         : 4         : N              
-output[7]                    : V12       : output : 2.5 V             :         : 4         : N              
-debug_bus_data_in[10]        : V13       : output : 2.5 V             :         : 4         : N              
-debug_immediate[8]           : V14       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : V15       :        :                   :         : 4         :                
-debug_bus_data_in[18]        : V16       : output : 2.5 V             :         : 4         : N              
-debug_bus_reg_rt[8]          : V17       : output : 2.5 V             :         : 4         : N              
-debug_pc[21]                 : V18       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rd[19]         : V7        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rs[7]          : V8        : output : 2.5 V             :         : 3         : N              
+output[20]                   : V9        : output : 2.5 V             :         : 3         : N              
+output[13]                   : V10       : output : 2.5 V             :         : 3         : N              
+output[22]                   : V11       : output : 2.5 V             :         : 4         : N              
+output[26]                   : V12       : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rd[15]         : V13       : output : 2.5 V             :         : 4         : N              
+output[16]                   : V14       : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rs[13]         : V15       : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rd[2]          : V16       : output : 2.5 V             :         : 4         : N              
+debug_ir[2]                  : V17       : output : 2.5 V             :         : 4         : N              
+debug_immediate[25]          : V18       : output : 2.5 V             :         : 5         : N              
 GND                          : V19       : gnd    :                   :         :           :                
-debug_pc[26]                 : V20       : output : 2.5 V             :         : 5         : N              
-debug_pc[22]                 : V21       : output : 2.5 V             :         : 5         : N              
-debug_pc[17]                 : V22       : output : 2.5 V             :         : 5         : N              
-debug_mem_data_out[30]       : W1        : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : W2        :        :                   :         : 2         :                
-debug_immediate[31]          : W3        : output : 2.5 V             :         : 3         : N              
-debug_immediate[21]          : W4        : output : 2.5 V             :         : 3         : N              
-debug_bus_reg_rs[12]         : W5        : output : 2.5 V             :         : 3         : N              
-debug_mem_data_out[2]        : W6        : output : 2.5 V             :         : 3         : N              
-debug_bus_data_in[11]        : W7        : output : 2.5 V             :         : 3         : N              
-debug_immediate[4]           : W8        : output : 2.5 V             :         : 3         : N              
-debug_immediate[9]           : W9        : output : 2.5 V             :         : 3         : N              
-debug_bus_data_in[21]        : W10       : output : 2.5 V             :         : 3         : N              
-debug_mem_data_out[13]       : W11       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : W12       :        :                   :         : 4         :                
-debug_bus_reg_rd[10]         : W13       : output : 2.5 V             :         : 4         : N              
-debug_ir[8]                  : W14       : output : 2.5 V             :         : 4         : N              
-debug_rd_addr[2]             : W15       : output : 2.5 V             :         : 4         : N              
-debug_bus_reg_rs[1]          : W16       : output : 2.5 V             :         : 4         : N              
-debug_mem_data_out[29]       : W17       : output : 2.5 V             :         : 4         : N              
-debug_ir[21]                 : W18       : output : 2.5 V             :         : 4         : N              
-debug_pc[27]                 : W19       : output : 2.5 V             :         : 5         : N              
-debug_pc[25]                 : W20       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[12]       : V20       : output : 2.5 V             :         : 5         : N              
+debug_mem_data_out[11]       : V21       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rs[9]          : V22       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W1        :        :                   :         : 2         :                
+debug_ir[31]                 : W2        : output : 2.5 V             :         : 2         : N              
+debug_bus_reg_rd[14]         : W3        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[12]         : W4        : output : 2.5 V             :         : 3         : N              
+debug_mem_data_out[2]        : W5        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rt[20]         : W6        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rs[22]         : W7        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[27]         : W8        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rs[28]         : W9        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rs[27]         : W10       : output : 2.5 V             :         : 3         : N              
+output[17]                   : W11       : output : 2.5 V             :         : 4         : N              
+output[9]                    : W12       : output : 2.5 V             :         : 4         : N              
+output[0]                    : W13       : output : 2.5 V             :         : 4         : N              
+debug_opcode[1]              : W14       : output : 2.5 V             :         : 4         : N              
+output[2]                    : W15       : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rd[8]          : W16       : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W17       :        :                   :         : 4         :                
+debug_ir[25]                 : W18       : output : 2.5 V             :         : 4         : N              
+debug_immediate[21]          : W19       : output : 2.5 V             :         : 5         : N              
+debug_ir[17]                 : W20       : output : 2.5 V             :         : 5         : N              
 GND                          : W21       : gnd    :                   :         :           :                
-debug_bus_reg_rt[24]         : W22       : output : 2.5 V             :         : 5         : N              
-debug_immediate[6]           : Y1        : output : 2.5 V             :         : 3         : N              
-debug_bus_reg_rs[21]         : Y2        : output : 2.5 V             :         : 3         : N              
-debug_mem_data_out[14]       : Y3        : output : 2.5 V             :         : 3         : N              
-output[20]                   : Y4        : output : 2.5 V             :         : 3         : N              
-debug_bus_reg_rs[31]         : Y5        : output : 2.5 V             :         : 3         : N              
-debug_immediate[29]          : Y6        : output : 2.5 V             :         : 3         : N              
-debug_rd_addr[1]             : Y7        : output : 2.5 V             :         : 3         : N              
-debug_immediate[10]          : Y8        : output : 2.5 V             :         : 3         : N              
+debug_ir[4]                  : W22       : output : 2.5 V             :         : 5         : N              
+debug_ir[8]                  : Y1        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rt[26]         : Y2        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rt[13]         : Y3        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rs[29]         : Y4        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[3]          : Y5        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[20]         : Y6        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rd[5]          : Y7        : output : 2.5 V             :         : 3         : N              
+debug_bus_reg_rs[5]          : Y8        : output : 2.5 V             :         : 3         : N              
 GND                          : Y9        : gnd    :                   :         :           :                
-debug_immediate[27]          : Y10       : output : 2.5 V             :         : 3         : N              
-debug_immediate[0]           : Y11       : output : 2.5 V             :         : 4         : N              
+output[27]                   : Y10       : output : 2.5 V             :         : 3         : N              
+output[24]                   : Y11       : output : 2.5 V             :         : 4         : N              
 GND                          : Y12       : gnd    :                   :         :           :                
-debug_bus_reg_rt[15]         : Y13       : output : 2.5 V             :         : 4         : N              
-debug_ir[12]                 : Y14       : output : 2.5 V             :         : 4         : N              
+output[25]                   : Y13       : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rd[9]          : Y14       : output : 2.5 V             :         : 4         : N              
 GND                          : Y15       : gnd    :                   :         :           :                
-debug_bus_reg_rd[19]         : Y16       : output : 2.5 V             :         : 4         : N              
-debug_bus_reg_rt[21]         : Y17       : output : 2.5 V             :         : 4         : N              
-debug_ir[30]                 : Y18       : output : 2.5 V             :         : 4         : N              
-debug_bus_data_in[31]        : Y19       : output : 2.5 V             :         : 4         : N              
-debug_pc[28]                 : Y20       : output : 2.5 V             :         : 5         : N              
-debug_pc[23]                 : Y21       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y22       :        :                   :         : 5         :                
+output[11]                   : Y16       : output : 2.5 V             :         : 4         : N              
+output[1]                    : Y17       : output : 2.5 V             :         : 4         : N              
+debug_bus_data_in[4]         : Y18       : output : 2.5 V             :         : 4         : N              
+debug_bus_reg_rd[31]         : Y19       : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y20       :        :                   :         : 5         :                
+debug_ir[29]                 : Y21       : output : 2.5 V             :         : 5         : N              
+debug_bus_reg_rd[7]          : Y22       : output : 2.5 V             :         : 5         : N              

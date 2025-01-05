@@ -1,5 +1,5 @@
-instruction_path = "./instructions.mips"
-memo_path = "./memo.txt"
+instruction_path = "./custom_compiler/instructions.mips"
+memo_path = "./Memory.vhd"
 
 
 def generate_r_type(func, rs, rt, rd, shamt="00000"):
@@ -93,12 +93,18 @@ def compile_instruction(instruction):
         return generate_i_type("000110", 0, rt, imm)
     elif opcode == "OUT":  # OUT rd
         rd = clean_register(parts[1])
-        rs = 0 
+        rs = 0
         immediate = 0
         return generate_i_type("000010", rs, rd, immediate)
     elif opcode == "BUN" or opcode == "J":  # BUN address
         address = int(parts[1])
         return generate_j_type("111111", address)
+    elif opcode == "MOV":  # MOV rd, rs
+        rd = clean_register(parts[1])
+        rs = clean_register(parts[2])
+        imm = 0
+        return generate_i_type("000110", rs, rd, imm)
+
     elif opcode == "NOP":
         return "0" * 32
     else:
@@ -106,24 +112,44 @@ def compile_instruction(instruction):
 
 
 def main():
+    with open(memo_path, 'r') as f:
+        vhdl_lines = f.readlines()
+
+    start_marker = "-- PY_START_EDITING"
+    end_marker = "-- PY_END_EDITING"
+
+    start_index = next((i for i, line in enumerate(
+        vhdl_lines) if start_marker in line), None)
+    end_index = next((i for i, line in enumerate(
+        vhdl_lines) if end_marker in line), None)
+
+    if start_index is None or end_index is None:
+        raise ValueError(
+            f"Markers {start_marker} or {end_marker} not found in the VHDL file.")
+
+    new_memory_lines = ["    SIGNAL memory : memory_array := (\n"]
     with open(instruction_path, 'r') as f:
         instructions = f.readlines()
 
-    with open(memo_path, 'w') as f:
-        f.write("SIGNAL memory : memory_array := (\n")
-        index = 0
-        for line_num, inst in enumerate(instructions, start=1):
-            inst = inst.split('#')[0].strip()
-            if not inst:
-                continue
+    index = 0
+    for line_num, inst in enumerate(instructions, start=1):
+        inst = inst.split('#')[0].strip()
+        if not inst:
+            continue
+        try:
+            binary = compile_instruction(inst)
+            new_memory_lines.append(f'    {index} => "{binary}", -- {inst}\n')
+            index += 1
+        except ValueError as e:
+            print(f"Error: {e} (line {line_num}: {inst})")
 
-            try:
-                binary = compile_instruction(inst)
-                f.write(f'    {index} => "{binary}", -- {inst}\n')
-                index += 1
-            except ValueError as e:
-                print(f"Error: {e} (line {line_num}: {inst})")
-        f.write('    OTHERS => (OTHERS => \'0\')\n);\n')
+    new_memory_lines.append("    OTHERS => (OTHERS => '0')\n")
+    new_memory_lines.append("    );\n")
+
+    vhdl_lines[start_index + 1:end_index] = new_memory_lines
+
+    with open(memo_path, 'w') as f:
+        f.writelines(vhdl_lines)
 
 
 if __name__ == "__main__":

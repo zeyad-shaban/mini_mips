@@ -46,12 +46,13 @@ ARCHITECTURE Beh OF mini_mips IS
 	SIGNAL bus_reg_rd : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL bus_data_in : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL reg_file_ld : STD_LOGIC := '0';
-	SIGNAL output_signal : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
 	-- State machine
 	TYPE state_type IS (FETCH, DECODE1, DECODE2, EXECUTE, WRITEBACK);
-    SIGNAL current_state : state_type := FETCH;
-    SIGNAL opcode_temp : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL current_state : state_type := FETCH;
+	SIGNAL opcode_temp : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL ir_temp : STD_LOGIC_VECTOR(31 DOWNTO 0);
+
 BEGIN
 	-- for debugging purpose
 	debug_pc <= pc;
@@ -74,8 +75,6 @@ BEGIN
 	PROCESS (clk)
 	BEGIN
 		IF rising_edge(clk) THEN
-			reg_file_ld <= '0';
-
 			IF clr = '1' THEN
 				pc <= (OTHERS => '0');
 				ir <= (OTHERS => '0');
@@ -88,83 +87,106 @@ BEGIN
 				immediate <= (OTHERS => '0');
 				address <= (OTHERS => '0');
 			ELSE
-				-- Fetch stage
-				pc <= STD_LOGIC_VECTOR(unsigned(pc) + 1);
-				ir <= mem_data_out;
+				CASE current_state IS
+					WHEN FETCH =>
+						ir_temp <= mem_data_out;
+						pc <= STD_LOGIC_VECTOR(unsigned(pc) + 1);
+						current_state <= DECODE1;
 
-				-- Decode stage
-				opcode <= ir(31 DOWNTO 26);
-				-- how to add a one clock cycel delay here so i ensure i'm done reading opcode before doing anythign else
-				IF opcode = "000000" THEN -- R-type
-					output <= "00000000000011111111111100011111"; -- todelete
-					rt_addr <= ir(20 DOWNTO 16);
-					rs_addr <= ir(25 DOWNTO 21);
-					rd_addr <= ir(15 DOWNTO 11);
-					shamt <= ir(10 DOWNTO 6);
-					func <= ir(5 DOWNTO 0);
-				ELSIF opcode = "111111" THEN -- J-type
-					address <= ir(25 DOWNTO 0);
-				ELSE -- I-type
-					output <= "11111111111111111111111111111111"; -- todelete
-					rs_addr <= ir(25 DOWNTO 21);
-					rd_addr <= ir(20 DOWNTO 16);
-					immediate <= Extend_Vector(ir(15 DOWNTO 0), 32);
-				END IF;
+					WHEN DECODE1 =>
+						ir <= ir_temp;
+						opcode_temp <= ir_temp(31 DOWNTO 26);
+						current_state <= DECODE2;
 
-				-- Execute phase
-				IF opcode = "000000" THEN -- R-type
-					IF func = "000001" THEN -- XOR
-						reg_file_ld <= '1';
-						bus_data_in <= bus_reg_rs XOR bus_reg_rt;
-					ELSIF func = "000010" THEN -- Add
-						reg_file_ld <= '1';
-						bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) + unsigned(bus_reg_rt));
-					ELSIF func = "000011" THEN -- Sub
-						reg_file_ld <= '1';
-						bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) - unsigned(bus_reg_rt));
-					ELSIF func = "000100" THEN -- ASL
-						reg_file_ld <= '1';
-						bus_data_in <= STD_LOGIC_VECTOR(shift_left(signed(bus_reg_rt), to_integer(unsigned(shamt))));
-					ELSIF func = "000101" THEN -- ASR
-						reg_file_ld <= '1';
-						bus_data_in <= STD_LOGIC_VECTOR(shift_right(signed(bus_reg_rt), to_integer(unsigned(shamt))));
-					ELSIF func = "000110" THEN -- LSL
-						reg_file_ld <= '1';
-						bus_data_in <= STD_LOGIC_VECTOR(shift_left(unsigned(bus_reg_rt), to_integer(unsigned(shamt))));
-					ELSIF func = "000111" THEN -- LSR
-						reg_file_ld <= '1';
-						bus_data_in <= STD_LOGIC_VECTOR(shift_right(unsigned(bus_reg_rt), to_integer(unsigned(shamt))));
-					ELSIF func = "001000" THEN -- ROL
-						reg_file_ld <= '1';
-						bus_data_in <= bus_reg_rt(30 DOWNTO 0) & bus_reg_rt(31);
-					ELSIF func = "001001" THEN -- ROR
-						reg_file_ld <= '1';
-						bus_data_in <= bus_reg_rt(0) & bus_reg_rt(31 DOWNTO 1);
-					END IF;
+					WHEN DECODE2 =>
+						opcode <= opcode_temp;
+						IF opcode_temp = "000000" THEN -- R-type
+							rt_addr <= ir_temp(20 DOWNTO 16);
+							rs_addr <= ir_temp(25 DOWNTO 21);
+							rd_addr <= ir_temp(15 DOWNTO 11);
+							shamt <= ir_temp(10 DOWNTO 6);
+							func <= ir_temp(5 DOWNTO 0);
+						ELSIF opcode_temp = "111111" THEN -- J-type
+							address <= ir_temp(25 DOWNTO 0);
+						ELSE -- I-type
+							rs_addr <= ir_temp(25 DOWNTO 21);
+							rd_addr <= ir_temp(20 DOWNTO 16);
+							immediate <= Extend_Vector(ir_temp(15 DOWNTO 0), 32);
+						END IF;
 
-					-- J Types
-				ELSIF opcode = "111111" THEN -- Jump aka BUN
-					pc <= Extend_Vector(address, 32);
+						current_state <= EXECUTE;
 
-				ELSE -- I-type
-					IF opcode = "000001" THEN -- LH (aka input)
-						bus_data_in <= immediate;
-						reg_file_ld <= '1';
-					ELSIF opcode = "000010" THEN -- OUT
-						-- output <= bus_reg_rd;
-					ELSIF opcode = "000011" THEN -- XORi
-						bus_data_in <= bus_reg_rs XOR immediate;
-						reg_file_ld <= '1';
-					ELSIF opcode = "000100" THEN -- Addi
-						bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) + unsigned(immediate));
-						reg_file_ld <= '1';
-					ELSIF opcode = "000101" THEN -- Subi
-						bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) + unsigned(immediate));
-						reg_file_ld <= '1';
-					ELSE
-						NULL;
-					END IF;
-				END IF;
+					WHEN EXECUTE =>
+						-- Execute phase
+						IF opcode = "000000" THEN -- R-type
+							IF func = "000001" THEN -- XOR
+								reg_file_ld <= '1';
+								bus_data_in <= bus_reg_rs XOR bus_reg_rt;
+							ELSIF func = "000010" THEN -- Add
+								reg_file_ld <= '1';
+								bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) + unsigned(bus_reg_rt));
+							ELSIF func = "000011" THEN -- Sub
+								reg_file_ld <= '1';
+								bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) - unsigned(bus_reg_rt));
+							ELSIF func = "000100" THEN -- ASL
+								reg_file_ld <= '1';
+								bus_data_in <= STD_LOGIC_VECTOR(shift_left(signed(bus_reg_rt), to_integer(unsigned(shamt))));
+							ELSIF func = "000101" THEN -- ASR
+								reg_file_ld <= '1';
+								bus_data_in <= STD_LOGIC_VECTOR(shift_right(signed(bus_reg_rt), to_integer(unsigned(shamt))));
+							ELSIF func = "000110" THEN -- LSL
+								reg_file_ld <= '1';
+								bus_data_in <= STD_LOGIC_VECTOR(shift_left(unsigned(bus_reg_rt), to_integer(unsigned(shamt))));
+							ELSIF func = "000111" THEN -- LSR
+								reg_file_ld <= '1';
+								bus_data_in <= STD_LOGIC_VECTOR(shift_right(unsigned(bus_reg_rt), to_integer(unsigned(shamt))));
+							ELSIF func = "001000" THEN -- ROL
+								reg_file_ld <= '1';
+								bus_data_in <= bus_reg_rt(30 DOWNTO 0) & bus_reg_rt(31);
+							ELSIF func = "001001" THEN -- ROR
+								reg_file_ld <= '1';
+								bus_data_in <= bus_reg_rt(0) & bus_reg_rt(31 DOWNTO 1);
+							END IF;
+
+							-- J Types
+						ELSIF opcode = "111111" THEN -- Jump aka BUN
+							pc <= Extend_Vector(address, 32);
+
+						ELSE -- I-type
+							IF opcode = "000001" THEN -- LH (aka input)
+								bus_data_in <= immediate;
+								reg_file_ld <= '1';
+							ELSIF opcode = "000010" THEN -- OUT
+								--- this isnt' working for whatever reason...
+								output <= bus_reg_rd;
+							ELSIF opcode = "000011" THEN -- XORi
+								bus_data_in <= bus_reg_rs XOR immediate;
+								reg_file_ld <= '1';
+							ELSIF opcode = "000100" THEN -- Addi
+								bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) + unsigned(immediate));
+								reg_file_ld <= '1';
+							ELSIF opcode = "000101" THEN -- Subi
+								bus_data_in <= STD_LOGIC_VECTOR(unsigned(bus_reg_rs) + unsigned(immediate));
+								reg_file_ld <= '1';
+							ELSIF opcode = "000110" THEN -- MOV
+								bus_data_in <= bus_reg_rs;
+								reg_file_ld <= '1';
+							ELSE
+								output <= "11111111111111111111111111111111";
+								NULL;
+							END IF;
+
+						END IF;
+
+						current_state <= WRITEBACK;
+
+					WHEN WRITEBACK =>
+						reg_file_ld <= '0';
+						current_state <= FETCH;
+
+					WHEN OTHERS =>
+						current_state <= FETCH;
+				END CASE;
 			END IF;
 		END IF;
 	END PROCESS;
