@@ -83,7 +83,7 @@ def compile_instruction(instruction):
         rs = clean_register(parts[2])
         imm = int(parts[3])
         return generate_i_type("000011", rs, rt, imm)
-    elif opcode == "LH" or opcode == "INP":  # LH rt, immediate
+    elif opcode == "LI" or opcode == "INP":  # LI rt, immediate
         rt = clean_register(parts[1])
         imm = int(parts[2])
         return generate_i_type("000001", 0, rt, imm)

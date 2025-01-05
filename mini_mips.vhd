@@ -153,7 +153,7 @@ BEGIN
 							pc <= Extend_Vector(address, 32);
 
 						ELSE -- I-type
-							IF opcode = "000001" THEN -- LH (aka input)
+							IF opcode = "000001" THEN -- LI (aka input)
 								bus_data_in <= immediate;
 								reg_file_ld <= '1';
 							ELSIF opcode = "000010" THEN -- OUT
