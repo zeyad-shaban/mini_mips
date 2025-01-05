@@ -260,11 +260,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "debug_ir[0]",
+					"strict" : false
+				},
+				{
 					"name" : "debug_ir[1]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_ir[3]",
+					"name" : "debug_ir[2]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[4]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[7]",
 					"strict" : false
 				},
 				{
@@ -273,6 +285,10 @@
 				},
 				{
 					"name" : "debug_ir[12]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[13]",
 					"strict" : false
 				},
 				{
@@ -292,10 +308,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "debug_ir[22]",
-					"strict" : false
-				},
-				{
 					"name" : "debug_ir[26]",
 					"strict" : false
 				},
@@ -304,19 +316,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "debug_ir[28]",
-					"strict" : false
-				},
-				{
 					"name" : "debug_opcode[0]",
 					"strict" : false
 				},
 				{
 					"name" : "debug_opcode[1]",
-					"strict" : false
-				},
-				{
-					"name" : "debug_opcode[2]",
 					"strict" : false
 				},
 				{
@@ -332,11 +336,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "debug_immediate[0]",
+					"strict" : false
+				},
+				{
 					"name" : "debug_immediate[1]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_immediate[3]",
+					"name" : "debug_immediate[2]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_immediate[4]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_immediate[7]",
 					"strict" : false
 				},
 				{
@@ -348,11 +364,27 @@
 					"strict" : false
 				},
 				{
+					"name" : "debug_immediate[13]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[0]",
+					"strict" : false
+				},
+				{
 					"name" : "debug_mem_data_out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "debug_mem_data_out[3]",
+					"name" : "debug_mem_data_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[7]",
 					"strict" : false
 				},
 				{
@@ -361,6 +393,10 @@
 				},
 				{
 					"name" : "debug_mem_data_out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[13]",
 					"strict" : false
 				},
 				{
@@ -380,19 +416,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "debug_mem_data_out[22]",
-					"strict" : false
-				},
-				{
 					"name" : "debug_mem_data_out[26]",
 					"strict" : false
 				},
 				{
 					"name" : "debug_mem_data_out[27]",
-					"strict" : false
-				},
-				{
-					"name" : "debug_mem_data_out[28]",
 					"strict" : false
 				},
 				{

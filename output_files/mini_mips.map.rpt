@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mini_mips
-Sun Jan  5 10:21:56 2025
+Sun Jan  5 12:12:08 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -51,15 +51,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jan  5 10:21:56 2025          ;
+; Analysis & Synthesis Status        ; Successful - Sun Jan  5 12:12:08 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; mini_mips                                      ;
 ; Top-level Entity Name              ; mini_mips                                      ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 957                                            ;
-;     Total combinational functions  ; 718                                            ;
-;     Dedicated logic registers      ; 398                                            ;
-; Total registers                    ; 398                                            ;
+; Total logic elements               ; 1,042                                          ;
+;     Total combinational functions  ; 801                                            ;
+;     Dedicated logic registers      ; 410                                            ;
+; Total registers                    ; 410                                            ;
 ; Total pins                         ; 302                                            ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -192,20 +192,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 957       ;
+; Estimated Total logic elements              ; 1,042     ;
 ;                                             ;           ;
-; Total combinational functions               ; 718       ;
+; Total combinational functions               ; 801       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 475       ;
-;     -- 3 input functions                    ; 112       ;
-;     -- <=2 input functions                  ; 131       ;
+;     -- 4 input functions                    ; 474       ;
+;     -- 3 input functions                    ; 222       ;
+;     -- <=2 input functions                  ; 105       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 626       ;
-;     -- arithmetic mode                      ; 92        ;
+;     -- normal mode                          ; 708       ;
+;     -- arithmetic mode                      ; 93        ;
 ;                                             ;           ;
-; Total registers                             ; 398       ;
-;     -- Dedicated logic registers            ; 398       ;
+; Total registers                             ; 410       ;
+;     -- Dedicated logic registers            ; 410       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 302       ;
@@ -213,9 +213,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 398       ;
-; Total fan-out                               ; 4254      ;
-; Average fan-out                             ; 2.47      ;
+; Maximum fan-out                             ; 410       ;
+; Total fan-out                               ; 4570      ;
+; Average fan-out                             ; 2.52      ;
 +---------------------------------------------+-----------+
 
 
@@ -224,9 +224,9 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name               ; Entity Name ; Library Name ;
 +-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+-------------+--------------+
-; |mini_mips                  ; 718 (266)           ; 398 (142)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 302  ; 0            ; 0          ; |mini_mips                        ; mini_mips   ; work         ;
-;    |Memory:Memory_inst|     ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_mips|Memory:Memory_inst     ; Memory      ; work         ;
-;    |registers:RegFile_inst| ; 436 (436)           ; 256 (256)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_mips|registers:RegFile_inst ; registers   ; work         ;
+; |mini_mips                  ; 801 (368)           ; 410 (154)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 302  ; 0            ; 0          ; |mini_mips                        ; mini_mips   ; work         ;
+;    |Memory:Memory_inst|     ; 29 (29)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_mips|Memory:Memory_inst     ; Memory      ; work         ;
+;    |registers:RegFile_inst| ; 404 (404)           ; 256 (256)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_mips|registers:RegFile_inst ; registers   ; work         ;
 +-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -245,142 +245,134 @@ Encoding Type:  One-Hot
 +-------------------------+-------------------------+-----------------------+-----------------------+-----------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                     ;
-+-----------------------------------------------+----------------------------------------+
-; Register name                                 ; Reason for Removal                     ;
-+-----------------------------------------------+----------------------------------------+
-; immediate[17..31]                             ; Merged with immediate[16]              ;
-; immediate[16]                                 ; Stuck at GND due to stuck port data_in ;
-; ir_temp[0,2,4..10,13..15,19,20,23..25,29..31] ; Stuck at GND due to stuck port data_in ;
-; opcode_temp[3..5]                             ; Stuck at GND due to stuck port data_in ;
-; ir[0,2,4..10,13..15,19,20,23..25,29..31]      ; Stuck at GND due to stuck port data_in ;
-; opcode[3..5]                                  ; Stuck at GND due to stuck port data_in ;
-; rd_addr[3,4]                                  ; Stuck at GND due to stuck port data_in ;
-; immediate[0,2,4..10,13..15]                   ; Stuck at GND due to stuck port data_in ;
-; rs_addr[2,3]                                  ; Stuck at GND due to stuck port data_in ;
-; rt_addr[3]                                    ; Stuck at GND due to stuck port data_in ;
-; address[0..25]                                ; Stuck at GND due to stuck port data_in ;
-; func[0,2,4,5]                                 ; Stuck at GND due to stuck port data_in ;
-; shamt[0..4]                                   ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][0]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][0]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][1]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][1]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][2]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][2]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][3]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][3]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][4]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][4]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][5]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][5]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][6]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][6]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][7]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][7]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][8]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][8]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][9]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][9]        ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][10]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][10]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][11]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][11]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][12]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][12]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][13]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][13]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][14]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][14]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][15]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][15]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][16]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][16]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][17]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][17]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][18]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][18]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][19]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][19]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][20]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][20]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][21]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][21]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][22]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][22]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][23]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][23]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][24]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][24]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][25]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][25]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][26]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][26]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][27]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][27]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][28]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][28]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][29]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][29]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][30]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][30]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[8][31]       ; Stuck at GND due to stuck port data_in ;
-; registers:RegFile_inst|registers[9][31]       ; Stuck at GND due to stuck port data_in ;
-; immediate[12]                                 ; Merged with immediate[11]              ;
-; ir_temp[3]                                    ; Merged with ir_temp[26]                ;
-; ir_temp[12]                                   ; Merged with ir_temp[11]                ;
-; ir_temp[28]                                   ; Merged with ir_temp[22]                ;
-; Total Number of Removed Registers = 182       ;                                        ;
-+-----------------------------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                      ;
++------------------------------------------------+----------------------------------------+
+; Register name                                  ; Reason for Removal                     ;
++------------------------------------------------+----------------------------------------+
+; immediate[17..31]                              ; Merged with immediate[16]              ;
+; immediate[16]                                  ; Stuck at GND due to stuck port data_in ;
+; ir_temp[3,5,6,8..10,14,15,19,20,22..25,28..31] ; Stuck at GND due to stuck port data_in ;
+; opcode_temp[2..5]                              ; Stuck at GND due to stuck port data_in ;
+; ir[3,5,6,8..10,14,15,19,20,22..25,28..31]      ; Stuck at GND due to stuck port data_in ;
+; opcode[2..5]                                   ; Stuck at GND due to stuck port data_in ;
+; rd_addr[3,4]                                   ; Stuck at GND due to stuck port data_in ;
+; immediate[3,5,6,8..10,14,15]                   ; Stuck at GND due to stuck port data_in ;
+; rs_addr[1..3]                                  ; Stuck at GND due to stuck port data_in ;
+; rt_addr[3]                                     ; Stuck at GND due to stuck port data_in ;
+; address[0..25]                                 ; Stuck at GND due to stuck port data_in ;
+; func[3,5]                                      ; Stuck at GND due to stuck port data_in ;
+; shamt[0,2..4]                                  ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][0]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][0]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][1]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][1]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][2]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][2]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][3]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][3]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][4]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][4]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][5]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][5]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][6]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][6]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][7]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][7]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][8]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][8]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][9]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][9]         ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][10]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][10]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][11]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][11]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][12]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][12]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][13]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][13]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][14]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][14]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][15]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][15]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][16]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][16]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][17]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][17]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][18]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][18]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][19]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][19]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][20]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][20]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][21]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][21]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][22]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][22]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][23]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][23]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][24]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][24]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][25]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][25]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][26]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][26]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][27]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][27]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][28]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][28]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][29]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][29]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][30]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][30]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[8][31]        ; Stuck at GND due to stuck port data_in ;
+; registers:RegFile_inst|registers[9][31]        ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 170        ;                                        ;
++------------------------------------------------+----------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                      ;
-+---------------+---------------------------+--------------------------------------------------------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register                                               ;
-+---------------+---------------------------+--------------------------------------------------------------------------------------+
-; ir_temp[29]   ; Stuck at GND              ; opcode_temp[3], ir[29], opcode[3], address[1], address[3], address[11], address[12], ;
-;               ; due to stuck port data_in ; address[16], address[17], address[18], address[21], address[22]                      ;
-; ir_temp[0]    ; Stuck at GND              ; ir[0], immediate[0], address[0], func[0]                                             ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[2]    ; Stuck at GND              ; ir[2], immediate[2], address[2], func[2]                                             ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[4]    ; Stuck at GND              ; ir[4], immediate[4], address[4], func[4]                                             ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[5]    ; Stuck at GND              ; ir[5], immediate[5], address[5], func[5]                                             ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[6]    ; Stuck at GND              ; ir[6], immediate[6], address[6], shamt[0]                                            ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[7]    ; Stuck at GND              ; ir[7], immediate[7], address[7], shamt[1]                                            ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[8]    ; Stuck at GND              ; ir[8], immediate[8], address[8], shamt[2]                                            ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[9]    ; Stuck at GND              ; ir[9], immediate[9], address[9], shamt[3]                                            ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[10]   ; Stuck at GND              ; ir[10], immediate[10], address[10], shamt[4]                                         ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[14]   ; Stuck at GND              ; ir[14], rd_addr[3], immediate[14], address[14]                                       ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[15]   ; Stuck at GND              ; ir[15], rd_addr[4], immediate[15], address[15]                                       ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[13]   ; Stuck at GND              ; ir[13], immediate[13], address[13]                                                   ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[19]   ; Stuck at GND              ; ir[19], rt_addr[3], address[19]                                                      ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[23]   ; Stuck at GND              ; ir[23], rs_addr[2], address[23]                                                      ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[24]   ; Stuck at GND              ; ir[24], rs_addr[3], address[24]                                                      ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[30]   ; Stuck at GND              ; opcode_temp[4], ir[30], opcode[4]                                                    ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[31]   ; Stuck at GND              ; opcode_temp[5], ir[31], opcode[5]                                                    ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[20]   ; Stuck at GND              ; ir[20], address[20]                                                                  ;
-;               ; due to stuck port data_in ;                                                                                      ;
-; ir_temp[25]   ; Stuck at GND              ; ir[25], address[25]                                                                  ;
-;               ; due to stuck port data_in ;                                                                                      ;
-+---------------+---------------------------+--------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                ;
++---------------+---------------------------+------------------------------------------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                                                         ;
++---------------+---------------------------+------------------------------------------------------------------------------------------------+
+; ir_temp[28]   ; Stuck at GND              ; opcode_temp[2], ir[28], opcode[2], address[0], address[1], address[2], address[4], address[7], ;
+;               ; due to stuck port data_in ; address[11], address[12], address[13], address[16], address[17], address[18], address[21]      ;
+; ir_temp[3]    ; Stuck at GND              ; ir[3], immediate[3], address[3], func[3]                                                       ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[5]    ; Stuck at GND              ; ir[5], immediate[5], address[5], func[5]                                                       ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[6]    ; Stuck at GND              ; ir[6], immediate[6], address[6], shamt[0]                                                      ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[8]    ; Stuck at GND              ; ir[8], immediate[8], address[8], shamt[2]                                                      ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[9]    ; Stuck at GND              ; ir[9], immediate[9], address[9], shamt[3]                                                      ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[10]   ; Stuck at GND              ; ir[10], immediate[10], address[10], shamt[4]                                                   ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[14]   ; Stuck at GND              ; ir[14], rd_addr[3], immediate[14], address[14]                                                 ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[15]   ; Stuck at GND              ; ir[15], rd_addr[4], immediate[15], address[15]                                                 ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[19]   ; Stuck at GND              ; ir[19], rt_addr[3], address[19]                                                                ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[22]   ; Stuck at GND              ; ir[22], rs_addr[1], address[22]                                                                ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[23]   ; Stuck at GND              ; ir[23], rs_addr[2], address[23]                                                                ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[24]   ; Stuck at GND              ; ir[24], rs_addr[3], address[24]                                                                ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[29]   ; Stuck at GND              ; opcode_temp[3], ir[29], opcode[3]                                                              ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[30]   ; Stuck at GND              ; opcode_temp[4], ir[30], opcode[4]                                                              ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[31]   ; Stuck at GND              ; opcode_temp[5], ir[31], opcode[5]                                                              ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[20]   ; Stuck at GND              ; ir[20], address[20]                                                                            ;
+;               ; due to stuck port data_in ;                                                                                                ;
+; ir_temp[25]   ; Stuck at GND              ; ir[25], address[25]                                                                            ;
+;               ; due to stuck port data_in ;                                                                                                ;
++---------------+---------------------------+------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -388,12 +380,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 398   ;
-; Number of registers using Synchronous Clear  ; 35    ;
-; Number of registers using Synchronous Load   ; 4     ;
+; Total registers                              ; 410   ;
+; Number of registers using Synchronous Clear  ; 36    ;
+; Number of registers using Synchronous Load   ; 2     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 396   ;
+; Number of registers using Clock Enable       ; 409   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -403,10 +395,10 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; registers:RegFile_inst|registers[1][0] ; 3       ;
-; registers:RegFile_inst|registers[2][1] ; 3       ;
-; registers:RegFile_inst|registers[2][2] ; 3       ;
+; registers:RegFile_inst|registers[1][0] ; 4       ;
 ; registers:RegFile_inst|registers[1][2] ; 3       ;
+; registers:RegFile_inst|registers[2][1] ; 2       ;
+; registers:RegFile_inst|registers[2][2] ; 2       ;
 ; Total number of inverted registers = 4 ;         ;
 +----------------------------------------+---------+
 
@@ -416,29 +408,27 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|pc[23]                                  ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |mini_mips|ir[27]                                  ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |mini_mips|opcode[0]                               ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|output[0]~reg0                          ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mini_mips|immediate[1]                            ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mini_mips|func[3]                                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[0][20] ;
-; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[1][22] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|pc[24]                                  ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |mini_mips|ir[1]                                   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mini_mips|opcode[1]                               ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|output[1]~reg0                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |mini_mips|immediate[1]                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |mini_mips|shamt[1]                                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[0][30] ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[1][18] ;
 ; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[2][15] ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[3][3]  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[4][5]  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[5][6]  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[6][31] ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[7][28] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mini_mips|rs_addr[1]                              ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |mini_mips|rd_addr[0]                              ;
-; 10:1               ; 27 bits   ; 162 LEs       ; 81 LEs               ; 81 LEs                 ; Yes        ; |mini_mips|bus_data_in[23]                         ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |mini_mips|bus_data_in[1]                          ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mini_mips|registers:RegFile_inst|registers[1][0]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[3][11] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[4][25] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[5][26] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[6][7]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_mips|registers:RegFile_inst|registers[7][21] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |mini_mips|rd_addr[0]                              ;
+; 11:1               ; 22 bits   ; 154 LEs       ; 110 LEs              ; 44 LEs                 ; Yes        ; |mini_mips|bus_data_in[6]                          ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 30 LEs               ; 12 LEs                 ; Yes        ; |mini_mips|bus_data_in[11]                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mini_mips|registers:RegFile_inst|registers[1][2]  ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mini_mips|registers:RegFile_inst|registers[2][1]  ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |mini_mips|registers:RegFile_inst|Mux0             ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |mini_mips|registers:RegFile_inst|Mux87            ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |mini_mips|registers:RegFile_inst|Mux32            ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |mini_mips|registers:RegFile_inst|Mux72            ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |mini_mips|registers:RegFile_inst|Mux48            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 
 
@@ -480,25 +470,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 302                         ;
-; cycloneiii_ff         ; 398                         ;
-;     ENA               ; 358                         ;
-;     ENA SCLR          ; 34                          ;
-;     ENA SLD           ; 4                           ;
+; cycloneiii_ff         ; 410                         ;
+;     ENA               ; 372                         ;
+;     ENA SCLR          ; 35                          ;
+;     ENA SLD           ; 2                           ;
 ;     SCLR              ; 1                           ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 719                         ;
-;     arith             ; 92                          ;
-;         2 data inputs ; 57                          ;
-;         3 data inputs ; 35                          ;
-;     normal            ; 627                         ;
+; cycloneiii_lcell_comb ; 802                         ;
+;     arith             ; 93                          ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 62                          ;
+;     normal            ; 709                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 66                          ;
-;         3 data inputs ; 77                          ;
-;         4 data inputs ; 475                         ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 67                          ;
+;         3 data inputs ; 160                         ;
+;         4 data inputs ; 474                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.40                        ;
-; Average LUT depth     ; 5.58                        ;
+; Max LUT depth         ; 11.90                       ;
+; Average LUT depth     ; 6.64                        ;
 +-----------------------+-----------------------------+
 
 
@@ -517,7 +506,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sun Jan  5 10:21:46 2025
+    Info: Processing started: Sun Jan  5 12:11:57 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mini_mips -c mini_mips
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -544,41 +533,36 @@ Info (12128): Elaborating entity "registers" for hierarchy "registers:RegFile_in
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276013): RAM logic "Memory:Memory_inst|memory" is uninferred because MIF is not supported for the selected family File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Memory.vhd Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "debug_ir[0]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
-    Warning (13410): Pin "debug_ir[2]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
-    Warning (13410): Pin "debug_ir[4]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
+    Warning (13410): Pin "debug_ir[3]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[5]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[6]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
-    Warning (13410): Pin "debug_ir[7]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[8]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[9]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[10]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
-    Warning (13410): Pin "debug_ir[13]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[14]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[15]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[19]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[20]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
+    Warning (13410): Pin "debug_ir[22]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[23]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[24]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[25]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
+    Warning (13410): Pin "debug_ir[28]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[29]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[30]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
     Warning (13410): Pin "debug_ir[31]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 15
+    Warning (13410): Pin "debug_opcode[2]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 16
     Warning (13410): Pin "debug_opcode[3]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 16
     Warning (13410): Pin "debug_opcode[4]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 16
     Warning (13410): Pin "debug_opcode[5]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 16
     Warning (13410): Pin "debug_rd_addr[3]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 19
     Warning (13410): Pin "debug_rd_addr[4]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 19
-    Warning (13410): Pin "debug_immediate[0]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
-    Warning (13410): Pin "debug_immediate[2]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
-    Warning (13410): Pin "debug_immediate[4]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
+    Warning (13410): Pin "debug_immediate[3]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
     Warning (13410): Pin "debug_immediate[5]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
     Warning (13410): Pin "debug_immediate[6]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
-    Warning (13410): Pin "debug_immediate[7]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
     Warning (13410): Pin "debug_immediate[8]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
     Warning (13410): Pin "debug_immediate[9]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
     Warning (13410): Pin "debug_immediate[10]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
-    Warning (13410): Pin "debug_immediate[13]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
     Warning (13410): Pin "debug_immediate[14]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
     Warning (13410): Pin "debug_immediate[15]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
     Warning (13410): Pin "debug_immediate[16]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
@@ -597,37 +581,35 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "debug_immediate[29]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
     Warning (13410): Pin "debug_immediate[30]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
     Warning (13410): Pin "debug_immediate[31]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 22
-    Warning (13410): Pin "debug_mem_data_out[0]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
-    Warning (13410): Pin "debug_mem_data_out[2]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
-    Warning (13410): Pin "debug_mem_data_out[4]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
+    Warning (13410): Pin "debug_mem_data_out[3]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[5]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[6]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
-    Warning (13410): Pin "debug_mem_data_out[7]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[8]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[9]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[10]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
-    Warning (13410): Pin "debug_mem_data_out[13]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[14]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[15]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[19]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[20]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
+    Warning (13410): Pin "debug_mem_data_out[22]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[23]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[24]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[25]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
+    Warning (13410): Pin "debug_mem_data_out[28]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[29]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[30]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
     Warning (13410): Pin "debug_mem_data_out[31]" is stuck at GND File: C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/mini_mips.vhd Line: 23
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1308 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1401 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 300 output pins
-    Info (21061): Implemented 1006 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 77 warnings
-    Info: Peak virtual memory: 4800 megabytes
-    Info: Processing ended: Sun Jan  5 10:21:56 2025
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:12
+    Info (21061): Implemented 1099 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 70 warnings
+    Info: Peak virtual memory: 4804 megabytes
+    Info: Processing ended: Sun Jan  5 12:12:08 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:15
 
 
