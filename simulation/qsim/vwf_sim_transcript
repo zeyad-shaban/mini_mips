@@ -26,17 +26,23 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Jan  4 21:09:46 2025
+    Info: Processing started: Sun Jan  5 08:16:42 2025
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mini_mips -c mini_mips --vector_source=C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/Waveform5.vwf --testbench_file=C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/simulation/qsim/Waveform5.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 st bench files
 
- writing test bench files
+ output pin "debug_ar[3]" in vector source file when writing test bench files
 
-ench files
+ut pin "debug_bus_data_in[30]" in vector source file when writing test bench files
 
-ing (201005): Ignoring output pin "debug_pc[19]" in vector source file when writing test bench files
+mediate[27]" in vector source file when writing test bench files
+
+ug_bus_reg_rs[30]" in vector source file when writing test bench files
+
+hen writing test bench files
+
+PU time (on all processors): 00:00:00
 
 Completed successfully. 
 
@@ -61,13 +67,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Jan  4 21:09:46 2025
+    Info: Processing started: Sun Jan  5 08:16:43 2025
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/simulation/qsim/ mini_mips -c mini_mips
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file mini_mips.vho in folder "C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4650 megabytes
-    Info: Processing ended: Sat Jan  4 21:09:47 2025
+    Info: Processing ended: Sun Jan  5 08:16:44 2025
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
@@ -95,8 +101,7 @@ Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 
-# Start time: 21:09:48 on Jan 04,2025
-
+# Start time: 08:16:44 on Jan 05,2025
 # vcom -work work mini_mips.vho 
 
 # -- Loading package STANDARD
@@ -118,19 +123,20 @@ Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Compiling architecture structure of hard_block
 
 # -- Loading package dffeas_pack
+
 # -- Loading package altera_primitives_components
 
 # -- Compiling entity mini_mips
 
 # -- Compiling architecture structure of mini_mips
 
-# End time: 21:09:48 on Jan 04,2025, Elapsed time: 0:00:00
+# End time: 08:16:44 on Jan 05,2025, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 
-# Start time: 21:09:48 on Jan 04,2025
+# Start time: 08:16:44 on Jan 05,2025
 # vcom -work work Waveform5.vwf.vht 
 
 # -- Loading package STANDARD
@@ -143,12 +149,12 @@ Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
 # -- Compiling architecture mini_mips_arch of mini_mips_vhd_vec_tst
 
-# End time: 21:09:48 on Jan 04,2025, Elapsed time: 0:00:00
+# End time: 08:16:44 on Jan 05,2025, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.mini_mips_vhd_vec_tst 
-# Start time: 21:09:48 on Jan 04,2025
+# Start time: 08:16:45 on Jan 05,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -169,12 +175,12 @@ Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera.dffeas(vital_dffeas)
 # Loading fiftyfivenm.fiftyfivenm_unvm(behavior)
 # Loading fiftyfivenm.fiftyfivenm_adcblock(behavior)
-# ** Warning: Design size of 30270 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 27202 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 
 # after#35
 
-# End time: 21:09:49 on Jan 04,2025, Elapsed time: 0:00:01
+# End time: 08:16:45 on Jan 05,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -187,7 +193,71 @@ Reading C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/simulation/qsim/min
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/simulation/qsim/mini_mips_20250104210949.sim.vwf
+Warning: debug_ar[31] - signal not found in VCD.
+
+Warning: debug_ar[30] - signal not found in VCD.
+
+Warning: debug_ar[29] - signal not found in VCD.
+
+Warning: debug_ar[28] - signal not found in VCD.
+
+Warning: debug_ar[27] - signal not found in VCD.
+
+Warning: debug_ar[26] - signal not found in VCD.
+
+Warning: debug_ar[25] - signal not found in VCD.
+
+Warning: debug_ar[24] - signal not found in VCD.
+
+Warning: debug_ar[23] - signal not found in VCD.
+
+Warning: debug_ar[22] - signal not found in VCD.
+
+Warning: debug_ar[21] - signal not found in VCD.
+
+Warning: debug_ar[20] - signal not found in VCD.
+
+Warning: debug_ar[19] - signal not found in VCD.
+
+Warning: debug_ar[18] - signal not found in VCD.
+
+Warning: debug_ar[17] - signal not found in VCD.
+
+Warning: debug_ar[16] - signal not found in VCD.
+
+Warning: debug_ar[15] - signal not found in VCD.
+
+Warning: debug_ar[14] - signal not found in VCD.
+
+Warning: debug_ar[13] - signal not found in VCD.
+
+Warning: debug_ar[12] - signal not found in VCD.
+
+Warning: debug_ar[11] - signal not found in VCD.
+
+Warning: debug_ar[10] - signal not found in VCD.
+
+Warning: debug_ar[9] - signal not found in VCD.
+
+Warning: debug_ar[8] - signal not found in VCD.
+
+Warning: debug_ar[7] - signal not found in VCD.
+
+Warning: debug_ar[6] - signal not found in VCD.
+
+Warning: debug_ar[5] - signal not found in VCD.
+
+Warning: debug_ar[4] - signal not found in VCD.
+
+Warning: debug_ar[3] - signal not found in VCD.
+
+Warning: debug_ar[2] - signal not found in VCD.
+
+Warning: debug_ar[1] - signal not found in VCD.
+
+Warning: debug_ar[0] - signal not found in VCD.
+
+Writing the resulting VWF to C:/Users/zeyad/Desktop/Workspace/Code/VHDL/mini_mips/simulation/qsim/mini_mips_20250105081646.sim.vwf
 
 Finished VCD to VWF conversion.
 

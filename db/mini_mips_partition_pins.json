@@ -24,18 +24,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "output[5]",
-					"strict" : false
-				},
-				{
-					"name" : "output[6]",
-					"strict" : false
-				},
-				{
-					"name" : "output[7]",
-					"strict" : false
-				},
-				{
 					"name" : "output[8]",
 					"strict" : false
 				},
@@ -81,54 +69,6 @@
 				},
 				{
 					"name" : "output[19]",
-					"strict" : false
-				},
-				{
-					"name" : "output[20]",
-					"strict" : false
-				},
-				{
-					"name" : "output[21]",
-					"strict" : false
-				},
-				{
-					"name" : "output[22]",
-					"strict" : false
-				},
-				{
-					"name" : "output[23]",
-					"strict" : false
-				},
-				{
-					"name" : "output[24]",
-					"strict" : false
-				},
-				{
-					"name" : "output[25]",
-					"strict" : false
-				},
-				{
-					"name" : "output[26]",
-					"strict" : false
-				},
-				{
-					"name" : "output[27]",
-					"strict" : false
-				},
-				{
-					"name" : "output[28]",
-					"strict" : false
-				},
-				{
-					"name" : "output[29]",
-					"strict" : false
-				},
-				{
-					"name" : "output[30]",
-					"strict" : false
-				},
-				{
-					"name" : "output[31]",
 					"strict" : false
 				},
 				{
@@ -257,6 +197,46 @@
 				},
 				{
 					"name" : "debug_pc[31]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[16]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_ir[27]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_opcode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_rd_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[16]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mem_data_out[27]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[0]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rt[2]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bus_reg_rd[2]",
 					"strict" : false
 				},
 				{

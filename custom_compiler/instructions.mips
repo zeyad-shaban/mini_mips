@@ -1,4 +1,4 @@
-LH R1, 5
+ADD r1, r2, r1
 OUT R1
 
 # # Load values into registers

@@ -27,8 +27,8 @@ ARCHITECTURE Beh OF registers IS
     TYPE reg_array IS ARRAY (0 TO 2 * ADDR_WIDTH - 1) OF STD_LOGIC_VECTOR (2 ** ADDR_WIDTH - 1 DOWNTO 0);
     SIGNAL registers : reg_array := (
         0 => (OTHERS => '0'),
-        1 => "00000000000000000000000000000001", -- Initialize register 1 with 1
-        2 => "00000000000000000000000000000110", -- Initialize register 2 with 6
+        1 => "00000000000000000000000000000101", -- 5
+        2 => "00000000000000000000000000000110", -- 6
         OTHERS => (OTHERS => '0')
     );
 BEGIN
@@ -39,10 +39,10 @@ BEGIN
             ELSIF (ld = '1') THEN
                 registers(to_integer(unsigned(reg_rd_addr))) <= data_in;
             END IF;
-
-            bus_reg_rs <= registers(to_integer(unsigned(reg_rs_addr)));
-            bus_reg_rt <= registers(to_integer(unsigned(reg_rt_addr)));
-            bus_reg_rd <= registers(to_integer(unsigned(reg_rd_addr)));
         END IF;
     END PROCESS;
+
+    bus_reg_rs <= registers(to_integer(unsigned(reg_rs_addr)));
+    bus_reg_rt <= registers(to_integer(unsigned(reg_rt_addr)));
+    bus_reg_rd <= registers(to_integer(unsigned(reg_rd_addr)));
 END ARCHITECTURE Beh;

@@ -16,7 +16,6 @@ def generate_j_type(opcode, address):
 
 
 def clean_register(reg):
-    # Remove 'r' and strip any commas and spaces
     return int(reg[1:].strip(',').strip())
 
 
@@ -94,11 +93,13 @@ def compile_instruction(instruction):
         return generate_i_type("000110", 0, rt, imm)
     elif opcode == "OUT":  # OUT rd
         rd = clean_register(parts[1])
-        return generate_r_type("000010", 0, 0, rd)
+        rs = 0 
+        immediate = 0
+        return generate_i_type("000010", rs, rd, immediate)
     elif opcode == "BUN" or opcode == "J":  # BUN address
         address = int(parts[1])
         return generate_j_type("111111", address)
-    elif opcode == "NOP":  # NOP
+    elif opcode == "NOP":
         return "0" * 32
     else:
         raise ValueError(f"Unknown instruction: {instruction}")
@@ -110,14 +111,12 @@ def main():
 
     with open(memo_path, 'w') as f:
         f.write("SIGNAL memory : memory_array := (\n")
-        index = 1  # Start memory index from 1
+        index = 0
         for line_num, inst in enumerate(instructions, start=1):
-            # Remove comments and trim whitespace
             inst = inst.split('#')[0].strip()
-            if not inst:  # Skip empty lines or lines with only comments
+            if not inst:
                 continue
 
-            # Compile valid instruction
             try:
                 binary = compile_instruction(inst)
                 f.write(f'    {index} => "{binary}", -- {inst}\n')
@@ -125,7 +124,6 @@ def main():
             except ValueError as e:
                 print(f"Error: {e} (line {line_num}: {inst})")
         f.write('    OTHERS => (OTHERS => \'0\')\n);\n')
-
 
 
 if __name__ == "__main__":

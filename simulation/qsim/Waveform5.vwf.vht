@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "01/04/2025 21:09:46"
+-- Generated on "01/05/2025 08:16:43"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          mini_mips
 -- 
@@ -36,7 +36,6 @@ ARCHITECTURE mini_mips_arch OF mini_mips_vhd_vec_tst IS
 -- signals                                                   
 SIGNAL clk : STD_LOGIC;
 SIGNAL clr : STD_LOGIC;
-SIGNAL debug_ar : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL debug_bus_data_in : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL debug_bus_reg_rd : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL debug_bus_reg_rs : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -46,13 +45,13 @@ SIGNAL debug_ir : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL debug_mem_data_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL debug_opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL debug_pc : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL debug_rd_addr : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL debug_reg_file_ld : STD_LOGIC;
 SIGNAL output : STD_LOGIC_VECTOR(31 DOWNTO 0);
 COMPONENT mini_mips
 	PORT (
 	clk : IN STD_LOGIC;
 	clr : IN STD_LOGIC;
-	debug_ar : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	debug_bus_data_in : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	debug_bus_reg_rd : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	debug_bus_reg_rs : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -62,6 +61,7 @@ COMPONENT mini_mips
 	debug_mem_data_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	debug_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	debug_pc : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	debug_rd_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 	debug_reg_file_ld : OUT STD_LOGIC;
 	output : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 	);
@@ -72,7 +72,6 @@ BEGIN
 -- list connections between master ports and signals
 	clk => clk,
 	clr => clr,
-	debug_ar => debug_ar,
 	debug_bus_data_in => debug_bus_data_in,
 	debug_bus_reg_rd => debug_bus_reg_rd,
 	debug_bus_reg_rs => debug_bus_reg_rs,
@@ -82,6 +81,7 @@ BEGIN
 	debug_mem_data_out => debug_mem_data_out,
 	debug_opcode => debug_opcode,
 	debug_pc => debug_pc,
+	debug_rd_addr => debug_rd_addr,
 	debug_reg_file_ld => debug_reg_file_ld,
 	output => output
 	);
@@ -89,16 +89,19 @@ BEGIN
 -- clk
 t_prcs_clk: PROCESS
 BEGIN
-	FOR i IN 1 TO 6
-	LOOP
-		clk <= '0';
-		WAIT FOR 75000 ps;
-		clk <= '1';
-		WAIT FOR 75000 ps;
-	END LOOP;
+LOOP
 	clk <= '0';
-	WAIT FOR 75000 ps;
+	WAIT FOR 50000 ps;
 	clk <= '1';
-WAIT;
+	WAIT FOR 50000 ps;
+	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
+END LOOP;
 END PROCESS t_prcs_clk;
+
+-- clr
+t_prcs_clr: PROCESS
+BEGIN
+	clr <= '0';
+WAIT;
+END PROCESS t_prcs_clr;
 END mini_mips_arch;

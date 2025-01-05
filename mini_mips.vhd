@@ -16,12 +16,12 @@ ENTITY mini_mips IS
 		debug_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 		-- debug_rt_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 		-- debug_rs_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-		-- debug_rd_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		debug_rd_addr : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 		-- debug_shamt : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 		-- debug_func : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 		debug_immediate : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		debug_mem_data_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		debug_ar : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		-- debug_ar : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		debug_bus_data_in : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		debug_bus_reg_rs : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		debug_bus_reg_rt : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -46,8 +46,12 @@ ARCHITECTURE Beh OF mini_mips IS
 	SIGNAL bus_reg_rd : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL bus_data_in : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL reg_file_ld : STD_LOGIC := '0';
-	SIGNAL AR : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL output_signal : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
+	-- State machine
+	TYPE state_type IS (FETCH, DECODE1, DECODE2, EXECUTE, WRITEBACK);
+    SIGNAL current_state : state_type := FETCH;
+    SIGNAL opcode_temp : STD_LOGIC_VECTOR(5 DOWNTO 0);
 BEGIN
 	-- for debugging purpose
 	debug_pc <= pc;
@@ -55,12 +59,12 @@ BEGIN
 	debug_opcode <= opcode;
 	-- debug_rt_addr <= rt_addr;
 	-- debug_rs_addr <= rs_addr;
-	-- debug_rd_addr <= rd_addr;
+	debug_rd_addr <= rd_addr;
 	-- debug_shamt <= shamt;
 	-- debug_func <= func;
 	debug_immediate <= immediate;
 	debug_mem_data_out <= mem_data_out;
-	debug_ar <= ar;
+	-- debug_ar <= ar;
 	debug_bus_data_in <= bus_data_in;
 	debug_bus_reg_rs <= bus_reg_rs;
 	debug_bus_reg_rt <= bus_reg_rt;
@@ -83,17 +87,16 @@ BEGIN
 				func <= (OTHERS => '0');
 				immediate <= (OTHERS => '0');
 				address <= (OTHERS => '0');
-				AR <= (OTHERS => '0');
 			ELSE
-				output <= pc;
 				-- Fetch stage
-				ar <= pc;
 				pc <= STD_LOGIC_VECTOR(unsigned(pc) + 1);
 				ir <= mem_data_out;
 
 				-- Decode stage
 				opcode <= ir(31 DOWNTO 26);
+				-- how to add a one clock cycel delay here so i ensure i'm done reading opcode before doing anythign else
 				IF opcode = "000000" THEN -- R-type
+					output <= "00000000000011111111111100011111"; -- todelete
 					rt_addr <= ir(20 DOWNTO 16);
 					rs_addr <= ir(25 DOWNTO 21);
 					rd_addr <= ir(15 DOWNTO 11);
@@ -102,8 +105,9 @@ BEGIN
 				ELSIF opcode = "111111" THEN -- J-type
 					address <= ir(25 DOWNTO 0);
 				ELSE -- I-type
-					rd_addr <= ir(20 DOWNTO 16);
+					output <= "11111111111111111111111111111111"; -- todelete
 					rs_addr <= ir(25 DOWNTO 21);
+					rd_addr <= ir(20 DOWNTO 16);
 					immediate <= Extend_Vector(ir(15 DOWNTO 0), 32);
 				END IF;
 
@@ -146,8 +150,7 @@ BEGIN
 					IF opcode = "000001" THEN -- LH (aka input)
 						bus_data_in <= immediate;
 						reg_file_ld <= '1';
-						bus_data_in <= mem_data_out;
-					ELSIF func = "000010" THEN -- OUT $rd, 0
+					ELSIF opcode = "000010" THEN -- OUT
 						-- output <= bus_reg_rd;
 					ELSIF opcode = "000011" THEN -- XORi
 						bus_data_in <= bus_reg_rs XOR immediate;
@@ -176,7 +179,7 @@ BEGIN
 		PORT MAP(
 			clk => clk,
 			write_enable => '0',
-			address => ar(9 DOWNTO 0),
+			address => pc(9 DOWNTO 0),
 			data_in => (OTHERS => '0'),
 			data_out => mem_data_out
 		);
